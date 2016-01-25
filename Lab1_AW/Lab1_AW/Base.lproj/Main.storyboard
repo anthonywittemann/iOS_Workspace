@@ -42,7 +42,7 @@
                                 <rect key="frame" x="40" y="380" width="520" height="158"/>
                                 <string key="text">I'm a junior at USC studying Computer Science. Outside of class, I am on the Triathlon team and am a CP/Grader for CSCI 310. I also enjoy skiing, hiking, reading and having a jolly old time with friends.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
