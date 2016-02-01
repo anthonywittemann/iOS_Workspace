@@ -9,6 +9,9 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 
 @end
 
@@ -17,6 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+-(IBAction)dismissKeyboard:(id)sender{
+    [sender resignFirstResponder];
+}
+
+- (IBAction)soccerButtonTouched:(id)sender {
+}
+- (IBAction)footballButtonTouched:(id)sender {
 }
 
 - (void)didReceiveMemoryWarning {

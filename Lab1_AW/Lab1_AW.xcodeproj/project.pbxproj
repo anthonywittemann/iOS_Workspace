@@ -15,9 +15,6 @@
 		EDF94CFA1C46F51B004E6985 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF94CF81C46F51B004E6985 /* LaunchScreen.storyboard */; };
 		EDF94D051C46F51B004E6985 /* Lab1_AWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF94D041C46F51B004E6985 /* Lab1_AWTests.m */; };
 		EDF94D101C46F51B004E6985 /* Lab1_AWUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF94D0F1C46F51B004E6985 /* Lab1_AWUITests.m */; };
-		EDF94D1F1C46F569004E6985 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EDF94D1D1C46F569004E6985 /* icon@2x.png */; };
-		EDF94D201C46F569004E6985 /* icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EDF94D1E1C46F569004E6985 /* icon@3x.png */; };
-		EDF94D221C46FCB7004E6985 /* IMG_1099.JPG in Resources */ = {isa = PBXBuildFile; fileRef = EDF94D211C46FCB7004E6985 /* IMG_1099.JPG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +51,6 @@
 		EDF94D0B1C46F51B004E6985 /* Lab1_AWUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lab1_AWUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF94D0F1C46F51B004E6985 /* Lab1_AWUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lab1_AWUITests.m; sourceTree = "<group>"; };
 		EDF94D111C46F51B004E6985 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDF94D1D1C46F569004E6985 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
-		EDF94D1E1C46F569004E6985 /* icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@3x.png"; sourceTree = "<group>"; };
-		EDF94D211C46FCB7004E6985 /* IMG_1099.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1099.JPG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,14 +101,11 @@
 		EDF94CE91C46F51A004E6985 /* Lab1_AW */ = {
 			isa = PBXGroup;
 			children = (
-				EDF94D211C46FCB7004E6985 /* IMG_1099.JPG */,
 				EDF94CED1C46F51A004E6985 /* AppDelegate.h */,
 				EDF94CEE1C46F51A004E6985 /* AppDelegate.m */,
 				EDF94CF01C46F51A004E6985 /* ViewController.h */,
 				EDF94CF11C46F51A004E6985 /* ViewController.m */,
 				EDF94CF31C46F51A004E6985 /* Main.storyboard */,
-				EDF94D1D1C46F569004E6985 /* icon@2x.png */,
-				EDF94D1E1C46F569004E6985 /* icon@3x.png */,
 				EDF94CF61C46F51B004E6985 /* Assets.xcassets */,
 				EDF94CF81C46F51B004E6985 /* LaunchScreen.storyboard */,
 				EDF94CFB1C46F51B004E6985 /* Info.plist */,
@@ -252,10 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF94D221C46FCB7004E6985 /* IMG_1099.JPG in Resources */,
 				EDF94CFA1C46F51B004E6985 /* LaunchScreen.storyboard in Resources */,
-				EDF94D1F1C46F569004E6985 /* icon@2x.png in Resources */,
-				EDF94D201C46F569004E6985 /* icon@3x.png in Resources */,
 				EDF94CF71C46F51B004E6985 /* Assets.xcassets in Resources */,
 				EDF94CF51C46F51A004E6985 /* Main.storyboard in Resources */,
 			);
@@ -508,6 +496,7 @@
 				EDF94D161C46F51B004E6985 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDF94D171C46F51B004E6985 /* Build configuration list for PBXNativeTarget "Lab1_AWTests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +505,7 @@
 				EDF94D191C46F51B004E6985 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDF94D1A1C46F51B004E6985 /* Build configuration list for PBXNativeTarget "Lab1_AWUITests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +514,7 @@
 				EDF94D1C1C46F51B004E6985 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

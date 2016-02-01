@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "ninja.png",
+      "filename" : "IMG_1099.JPG",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "ninja@2x.png",
       "scale" : "2x"
     },
     {
