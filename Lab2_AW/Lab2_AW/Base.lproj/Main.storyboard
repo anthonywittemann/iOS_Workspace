@@ -32,6 +32,7 @@
                                 <rect key="frame" x="98" y="184" width="120" height="120"/>
                                 <state key="normal" image="Football-1"/>
                                 <connections>
+                                    <action selector="footballButtonChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wj6-ZY-D43"/>
                                     <action selector="footballButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s3F-CA-Hf2"/>
                                 </connections>
                             </button>
@@ -54,6 +55,7 @@
                                 <rect key="frame" x="382" y="184" width="120" height="120"/>
                                 <state key="normal" image="soccer-1"/>
                                 <connections>
+                                    <action selector="soccerButtonChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pWM-rQ-ksp"/>
                                     <action selector="soccerButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eWP-1I-Unb"/>
                                 </connections>
                             </button>
@@ -69,18 +71,15 @@
                             <constraint firstItem="AkR-3G-K75" firstAttribute="width" secondItem="nm4-4T-5yB" secondAttribute="width" id="Mwn-ku-CDz"/>
                             <constraint firstItem="AkR-3G-K75" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TPX-TA-3cM"/>
                             <constraint firstItem="Mzd-Wq-fl9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="U3L-iw-Luk"/>
-                            <constraint firstItem="Mzd-Wq-fl9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="XHS-f1-kea"/>
                             <constraint firstItem="nm4-4T-5yB" firstAttribute="top" secondItem="R3W-7M-Chi" secondAttribute="bottom" constant="8" id="Yhu-N9-nXc"/>
                             <constraint firstItem="R3W-7M-Chi" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="YnX-Nm-n7Y"/>
                             <constraint firstItem="AkR-3G-K75" firstAttribute="top" secondItem="R3W-7M-Chi" secondAttribute="bottom" constant="8" id="aNG-6e-lUz"/>
                             <constraint firstItem="AkR-3G-K75" firstAttribute="leading" secondItem="nm4-4T-5yB" secondAttribute="trailing" constant="8" id="bwW-bU-vGw"/>
-                            <constraint firstItem="R3W-7M-Chi" firstAttribute="top" secondItem="YfH-mX-F3H" secondAttribute="bottom" id="e9f-Tj-mTh"/>
                             <constraint firstItem="YfH-mX-F3H" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gaf-bZ-5MN"/>
                             <constraint firstItem="Mzd-Wq-fl9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="jaf-WS-jBh"/>
                             <constraint firstItem="Mzd-Wq-fl9" firstAttribute="top" secondItem="nm4-4T-5yB" secondAttribute="bottom" id="kLz-fX-1eS"/>
                             <constraint firstItem="Mzd-Wq-fl9" firstAttribute="height" secondItem="AkR-3G-K75" secondAttribute="height" id="oKX-1o-IQV"/>
                             <constraint firstItem="AkR-3G-K75" firstAttribute="top" secondItem="R3W-7M-Chi" secondAttribute="bottom" constant="8" id="wc2-Of-dK2"/>
-                            <constraint firstItem="R3W-7M-Chi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xy2-Lk-6Cn"/>
                             <constraint firstItem="Mzd-Wq-fl9" firstAttribute="top" secondItem="AkR-3G-K75" secondAttribute="bottom" id="yR2-YW-jFD"/>
                             <constraint firstItem="nm4-4T-5yB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yuM-xd-NKQ"/>
                             <constraint firstItem="YfH-mX-F3H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="zsh-Z4-D50"/>
@@ -88,7 +87,9 @@
                     </view>
                     <connections>
                         <outlet property="messageLabel" destination="Mzd-Wq-fl9" id="YsI-aN-swQ"/>
+                        <outlet property="messageLabelOutlet" destination="Mzd-Wq-fl9" id="YHz-Rq-yB0"/>
                         <outlet property="nameTextField" destination="R3W-7M-Chi" id="OIV-M2-nuR"/>
+                        <outlet property="textFieldOutlet" destination="R3W-7M-Chi" id="fEq-ef-RJo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

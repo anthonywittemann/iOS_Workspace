@@ -36,4 +36,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)footballButtonChosen:(id)sender {
+}
+
+- (IBAction)soccerButtonChosen:(id)sender {
+}
 @end
