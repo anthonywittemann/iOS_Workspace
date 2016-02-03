@@ -30,10 +30,9 @@
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="276" verticalHuggingPriority="274" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nm4-4T-5yB">
                                 <rect key="frame" x="98" y="184" width="120" height="120"/>
-                                <state key="normal" image="Football-1"/>
+                                <state key="normal" image="football"/>
                                 <connections>
                                     <action selector="footballButtonChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wj6-ZY-D43"/>
-                                    <action selector="footballButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s3F-CA-Hf2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This label will change" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mzd-Wq-fl9">
@@ -42,7 +41,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="What is your name?" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R3W-7M-Chi">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What is your name?" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R3W-7M-Chi">
                                 <rect key="frame" x="20" y="94" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="R3W-7M-Chi" secondAttribute="height" multiplier="56:3" id="NRE-qZ-l5x"/>
@@ -50,13 +49,15 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldExit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="hm7-kU-6oa"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="276" verticalHuggingPriority="274" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkR-3G-K75">
                                 <rect key="frame" x="382" y="184" width="120" height="120"/>
-                                <state key="normal" image="soccer-1"/>
+                                <state key="normal" image="soccer"/>
                                 <connections>
                                     <action selector="soccerButtonChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pWM-rQ-ksp"/>
-                                    <action selector="soccerButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eWP-1I-Unb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -69,17 +70,19 @@
                             <constraint firstItem="AkR-3G-K75" firstAttribute="height" secondItem="nm4-4T-5yB" secondAttribute="height" id="IhR-un-Xvc"/>
                             <constraint firstItem="YfH-mX-F3H" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="KHg-Fy-LJy"/>
                             <constraint firstItem="AkR-3G-K75" firstAttribute="width" secondItem="nm4-4T-5yB" secondAttribute="width" id="Mwn-ku-CDz"/>
+                            <constraint firstItem="R3W-7M-Chi" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TL5-hN-z9o"/>
                             <constraint firstItem="AkR-3G-K75" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TPX-TA-3cM"/>
                             <constraint firstItem="Mzd-Wq-fl9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="U3L-iw-Luk"/>
-                            <constraint firstItem="nm4-4T-5yB" firstAttribute="top" secondItem="R3W-7M-Chi" secondAttribute="bottom" constant="8" id="Yhu-N9-nXc"/>
+                            <constraint firstItem="nm4-4T-5yB" firstAttribute="top" secondItem="R3W-7M-Chi" secondAttribute="bottom" constant="60" id="Yhu-N9-nXc"/>
                             <constraint firstItem="R3W-7M-Chi" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="YnX-Nm-n7Y"/>
-                            <constraint firstItem="AkR-3G-K75" firstAttribute="top" secondItem="R3W-7M-Chi" secondAttribute="bottom" constant="8" id="aNG-6e-lUz"/>
+                            <constraint firstItem="AkR-3G-K75" firstAttribute="top" secondItem="R3W-7M-Chi" secondAttribute="bottom" constant="60" id="aNG-6e-lUz"/>
+                            <constraint firstItem="R3W-7M-Chi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="blm-o5-ho4"/>
                             <constraint firstItem="AkR-3G-K75" firstAttribute="leading" secondItem="nm4-4T-5yB" secondAttribute="trailing" constant="8" id="bwW-bU-vGw"/>
                             <constraint firstItem="YfH-mX-F3H" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gaf-bZ-5MN"/>
                             <constraint firstItem="Mzd-Wq-fl9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="jaf-WS-jBh"/>
                             <constraint firstItem="Mzd-Wq-fl9" firstAttribute="top" secondItem="nm4-4T-5yB" secondAttribute="bottom" id="kLz-fX-1eS"/>
                             <constraint firstItem="Mzd-Wq-fl9" firstAttribute="height" secondItem="AkR-3G-K75" secondAttribute="height" id="oKX-1o-IQV"/>
-                            <constraint firstItem="AkR-3G-K75" firstAttribute="top" secondItem="R3W-7M-Chi" secondAttribute="bottom" constant="8" id="wc2-Of-dK2"/>
+                            <constraint firstItem="AkR-3G-K75" firstAttribute="top" secondItem="R3W-7M-Chi" secondAttribute="bottom" constant="60" id="wc2-Of-dK2"/>
                             <constraint firstItem="Mzd-Wq-fl9" firstAttribute="top" secondItem="AkR-3G-K75" secondAttribute="bottom" id="yR2-YW-jFD"/>
                             <constraint firstItem="nm4-4T-5yB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yuM-xd-NKQ"/>
                             <constraint firstItem="YfH-mX-F3H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="zsh-Z4-D50"/>
@@ -98,7 +101,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Football-1" width="120" height="120"/>
-        <image name="soccer-1" width="120" height="120"/>
+        <image name="football" width="96" height="96"/>
+        <image name="soccer" width="120" height="120"/>
     </resources>
 </document>

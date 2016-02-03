@@ -26,19 +26,48 @@
     [sender resignFirstResponder];
 }
 
-- (IBAction)soccerButtonTouched:(id)sender {
-}
-- (IBAction)footballButtonTouched:(id)sender {
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)footballButtonChosen:(id)sender {
+- (IBAction)footballButtonChosen:(id)sender{
+    NSUInteger nameLength = self.nameTextField.text.length;
+    
+    if(nameLength > 0){
+        self.messageLabel.text = [NSString stringWithFormat: @"%@, good choice", self.nameTextField.text];
+    } else{
+        self.messageLabel.text = @"Whoever you are, good choice";
+    }
 }
 
-- (IBAction)soccerButtonChosen:(id)sender {
+- (IBAction)soccerButtonChosen:(id)sender{
+    NSUInteger nameLength = self.nameTextField.text.length;
+    
+    if(nameLength > 0){
+        self.messageLabel.text = [NSString stringWithFormat: @"%@, you made the wrong choice", self.nameTextField.text];
+    } else{
+        self.messageLabel.text = @"Whoever you are, you made the wrong choice";
+    }
 }
+
+- (IBAction)textFieldExit:(id)sender {
+    [sender resignFirstResponder];
+}
+
+- (void) touchesBegan: (NSSet *)touches
+            withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([self.nameTextField isFirstResponder] &&
+        [touch view] != self.nameTextField) {
+        [self.nameTextField resignFirstResponder];
+    }
+    [super touchesBegan:touches withEvent:event];
+}
+
+- (IBAction) backgroundTouched:(id)sender {
+    [self.nameTextField resignFirstResponder];
+}
+
+
 @end
