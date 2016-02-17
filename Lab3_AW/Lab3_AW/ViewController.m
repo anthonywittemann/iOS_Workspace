@@ -7,9 +7,30 @@
 //
 
 #import "ViewController.h"
+#import "DataModel.h"
 
 @interface ViewController ()
+@property (strong, nonatomic) DataModel *model;
+
+
+//TODO add IBOutlets for lebels, control objects
+@property (weak, nonatomic) IBOutlet UILabel *taxLabel;
+@property (weak, nonatomic) IBOutlet UILabel *TotalForTipLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalWithTipLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalPerPersonLabel;
+@property (weak, nonatomic) IBOutlet UILabel *splitNumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tipPercentageLabel;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *clearAllButton;
+@property (weak, nonatomic) IBOutlet UIStepper *splitStepper;
+@property (weak, nonatomic) IBOutlet UISlider *tipSlider;
+@property (weak, nonatomic) IBOutlet UISwitch *tipIncludesTaxSwitch;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *taxPercentageSegmentedControl;
 @property (weak, nonatomic) IBOutlet UITextField *billTextField;
+
+
 
 @end
 
@@ -17,6 +38,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //NEEDED TO ACCESS PUBLIC PROPERTIES AND METHODS IN MODEL
+    //self.model = [[DataModel alloc] init];
+    self.model = [DataModel sharedModel]; // for singleton design pattern
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -28,17 +54,33 @@
 -(IBAction)dismissKeyboard:(id)sender{
     [sender resignFirstResponder];
 }
+
+
+/************* ADDED IBActions ****************/
+
 - (IBAction)segmentedControlTax:(id)sender {
     //TODO
 }
 
-- (IBAction)textFieldExit:(id)sender {
-    [sender resignFirstResponder];
-}
 - (IBAction)switchFlippedTipIncludesTax:(id)sender {
     //TODO
 }
+
 - (IBAction)sliderModifiedTip:(id)sender {
+    //TODO
+}
+
+- (IBAction)stepperIncrementedSplitBill:(id)sender {
+    //TODO
+}
+
+- (IBAction)clearAllPressed:(id)sender {
+    //TODO clear all fields with Actionsheet, UIAlertController
+}
+
+
+- (IBAction)textFieldExit:(id)sender {
+    [sender resignFirstResponder];
 }
 
 - (void) touchesBegan: (NSSet *)touches

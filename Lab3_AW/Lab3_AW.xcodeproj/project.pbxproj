@@ -15,6 +15,7 @@
 		ED6688D01C693DDD00C71747 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6688CE1C693DDD00C71747 /* LaunchScreen.storyboard */; };
 		ED6688DB1C693DDE00C71747 /* Lab3_AWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6688DA1C693DDE00C71747 /* Lab3_AWTests.m */; };
 		ED6688E61C693DDE00C71747 /* Lab3_AWUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6688E51C693DDE00C71747 /* Lab3_AWUITests.m */; };
+		ED6688F81C7511AD00C71747 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED6688F71C7511AD00C71747 /* DataModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		ED6688E11C693DDE00C71747 /* Lab3_AWUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lab3_AWUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6688E51C693DDE00C71747 /* Lab3_AWUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lab3_AWUITests.m; sourceTree = "<group>"; };
 		ED6688E71C693DDE00C71747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED6688F61C7511AD00C71747 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		ED6688F71C7511AD00C71747 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 		ED6688C01C693DDD00C71747 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ED6688D11C693DDD00C71747 /* Info.plist */,
 				ED6688C31C693DDD00C71747 /* AppDelegate.h */,
 				ED6688C41C693DDD00C71747 /* AppDelegate.m */,
 				ED6688CE1C693DDD00C71747 /* LaunchScreen.storyboard */,
@@ -141,7 +145,8 @@
 		ED6688F31C693DEE00C71747 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ED6688D11C693DDD00C71747 /* Info.plist */,
+				ED6688F61C7511AD00C71747 /* DataModel.h */,
+				ED6688F71C7511AD00C71747 /* DataModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED6688C81C693DDD00C71747 /* ViewController.m in Sources */,
+				ED6688F81C7511AD00C71747 /* DataModel.m in Sources */,
 				ED6688C51C693DDD00C71747 /* AppDelegate.m in Sources */,
 				ED6688C21C693DDD00C71747 /* main.m in Sources */,
 			);
