@@ -45,7 +45,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="okh-hs-3fq">
-                                <rect key="frame" x="107" y="113" width="473" height="29"/>
+                                <rect key="frame" x="107" y="113" width="473" height="31"/>
                                 <segments>
                                     <segment title="7.5"/>
                                     <segment title="8"/>
@@ -72,6 +72,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKl-g3-JoJ">
                                 <rect key="frame" x="20" y="550" width="560" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Clear All"/>
                                 <connections>
                                     <action selector="clearAllPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fBL-3Z-GLC"/>
@@ -229,7 +230,7 @@
                             <constraint firstItem="U7k-YD-ljN" firstAttribute="width" secondItem="nDj-lT-NtZ" secondAttribute="width" id="7aL-gn-lvD"/>
                             <constraint firstItem="nDj-lT-NtZ" firstAttribute="top" secondItem="mOg-cX-jl6" secondAttribute="bottom" constant="8" id="93k-eT-SaE"/>
                             <constraint firstItem="FS8-r1-cO1" firstAttribute="width" secondItem="duB-Jq-YKG" secondAttribute="width" id="9hI-QO-9pv"/>
-                            <constraint firstItem="ZKl-g3-JoJ" firstAttribute="top" secondItem="6f0-M1-h64" secondAttribute="bottom" constant="8" id="9w6-4n-uZC"/>
+                            <constraint firstItem="ZKl-g3-JoJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6f0-M1-h64" secondAttribute="bottom" constant="8" id="9w6-4n-uZC"/>
                             <constraint firstItem="6f0-M1-h64" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="EHV-Ql-yyT"/>
                             <constraint firstItem="nDj-lT-NtZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Mo6-Kj-46P"/>
                             <constraint firstItem="U7k-YD-ljN" firstAttribute="height" secondItem="nDj-lT-NtZ" secondAttribute="height" id="Sr1-Qn-11q"/>
@@ -257,16 +258,25 @@
                         <outlet property="TotalForTipLabel" destination="Of0-Ny-Col" id="MKQ-OP-KRT"/>
                         <outlet property="billTextField" destination="duB-Jq-YKG" id="c8n-rB-1ip"/>
                         <outlet property="clearAllButton" destination="ZKl-g3-JoJ" id="1HT-Hm-BoA"/>
+                        <outlet property="segmentedControlOutlet" destination="okh-hs-3fq" id="WcS-7v-Lng"/>
+                        <outlet property="sliderOutlet" destination="KIr-at-HX0" id="QbF-jh-ryN"/>
+                        <outlet property="splitLabelOutlet" destination="dyO-O2-Zd0" id="N1W-KA-sHn"/>
                         <outlet property="splitNumLabel" destination="dyO-O2-Zd0" id="LEg-Yo-YiQ"/>
                         <outlet property="splitStepper" destination="U9a-we-i8A" id="bxY-qY-q8L"/>
+                        <outlet property="stepperOutlet" destination="U9a-we-i8A" id="yIC-Q8-PI8"/>
+                        <outlet property="switchOutlet" destination="bj7-Yv-SEr" id="D0Y-Dm-Rc7"/>
                         <outlet property="taxLabel" destination="FS8-r1-cO1" id="gJA-f9-hIk"/>
+                        <outlet property="taxLabelOutlet" destination="FS8-r1-cO1" id="zHw-df-KQt"/>
                         <outlet property="taxPercentageSegmentedControl" destination="okh-hs-3fq" id="vaB-79-HgX"/>
                         <outlet property="tipIncludesTaxSwitch" destination="bj7-Yv-SEr" id="ty1-d7-m6c"/>
-                        <outlet property="tipLabel" destination="tS0-Xc-uhW" id="d6P-VO-buH"/>
+                        <outlet property="tipLabelOutlet" destination="tS0-Xc-uhW" id="8QV-DE-OeU"/>
                         <outlet property="tipPercentageLabel" destination="8yD-JY-LWi" id="S5F-X3-Uxv"/>
                         <outlet property="tipSlider" destination="KIr-at-HX0" id="d2n-Go-NOb"/>
+                        <outlet property="totalForTipOutlet" destination="Of0-Ny-Col" id="kPn-qI-DAw"/>
                         <outlet property="totalPerPersonLabel" destination="IR8-af-VFd" id="xPT-WQ-PkF"/>
+                        <outlet property="totalPerPersonLabelOutlet" destination="IR8-af-VFd" id="d2J-7z-VmR"/>
                         <outlet property="totalWithTipLabel" destination="8VZ-Dj-IEh" id="Std-ev-dn3"/>
+                        <outlet property="totalWithTipLabelOutlet" destination="8VZ-Dj-IEh" id="Spk-RG-jqJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

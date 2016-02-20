@@ -46,7 +46,18 @@
         self.courses = [[NSArray alloc] initWithObjects: @"ITP 342", @"EE 364", @"EE 101", @"ARTH 121", nil];
         self.courses = [NSArray arrayWithObjects: @"ITP 342", @"EE 364", @"EE 101", @"ARTH 121", nil];
         
-        //TODO initialize data from h file
+        //initialize data from h file
+        self.bill = 0;
+        self.taxRate = .075;
+        self.tax = 0;
+        self.tipIncludesTax = false;
+        self.totalForTip = 0;
+        self.tipPercentage = .20;
+        self.splitNum = 1;
+        self.tip = 0;
+        self.totalWithTip = 0;
+        self.totalPerPerson = 0;
+        
     }
     return self;
 }
@@ -58,5 +69,20 @@
 - (NSString *) getCourseAtIndex:(NSUInteger) index{
     return self.courses[index];
 }
+
+- (void) updateValues: (float) bill
+                     : (int) split
+                     : (float) tax
+                     : (float) tip
+                     : (bool) tipIncludesTax{
+    self.bill = bill;
+    self.splitNum = split;
+    self.taxRate = tax;
+    self.tipPercentage = tip;
+    self.tipIncludesTax = tipIncludesTax;
+    
+    
+}
+
 
 @end

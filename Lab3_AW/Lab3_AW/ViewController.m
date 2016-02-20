@@ -53,6 +53,7 @@
 
 -(IBAction)dismissKeyboard:(id)sender{
     [sender resignFirstResponder];
+    //TODO update textFields
 }
 
 
@@ -60,6 +61,21 @@
 
 - (IBAction)segmentedControlTax:(id)sender {
     //TODO
+}
+
+- (IBAction)onSegmentValueChanged:(UISegmentedControl *)sender {
+    switch ([sender selectedSegmentIndex]) {
+        case 0: //7.5
+            
+            break;
+        case 1: //
+            
+            break;
+        case 2:
+            
+        default:
+            break;
+    }
 }
 
 - (IBAction)switchFlippedTipIncludesTax:(id)sender {
@@ -75,7 +91,15 @@
 }
 
 - (IBAction)clearAllPressed:(id)sender {
-    //TODO clear all fields with Actionsheet, UIAlertController
+    //clear all fields
+    [self clearAllValues];
+    
+    //Helper method Actionsheet, UIAlertController
+    [self bringUpAlertController];
+    
+    //helper method to clear all (update values)
+    //TODO can't figure out how to call a method in DataModel class
+    
 }
 
 
@@ -96,6 +120,38 @@
 - (IBAction) backgroundTouched:(id)sender {
     [self.billTextField resignFirstResponder];
 }
+
+
+/************* Helper Methods ****************/
+
+
+
+- (void) clearAllValues{
+    
+    //reset controller values
+    [self.sliderOutlet setValue: 20 animated: YES];
+    [self.stepperOutlet setValue: 1];
+    [self.textFieldOutlet setText: @"" ];
+    [self.switchOutlet setOn: YES animated: YES];
+    [self.segmentedControlOutlet setSelectedSegmentIndex: 0];
+}
+
+- (void) bringUpAlertController{
+    UIAlertController *alertController = [UIAlertController  alertControllerWithTitle:@"Clear all fields"
+                                                                              message:@"Are you sure you want to Clear All?" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:@"Cancel"  style:UIAlertActionStyleCancel  handler:^(UIAlertAction *action) { /* code */ }];
+    
+    UIAlertAction *clearAction = [UIAlertAction
+                                  actionWithTitle:@"Clear"  style:UIAlertActionStyleDestructive  handler:^(UIAlertAction *action) { /* code */ }];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:clearAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+
 
 
 

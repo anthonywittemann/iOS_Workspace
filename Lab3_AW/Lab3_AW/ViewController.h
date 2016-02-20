@@ -11,6 +11,18 @@
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *textFieldOutlet;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControlOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *taxLabelOutlet;
+@property (weak, nonatomic) IBOutlet UISwitch *switchOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *totalForTipOutlet;
+@property (weak, nonatomic) IBOutlet UISlider *sliderOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *splitLabelOutlet;
+@property (weak, nonatomic) IBOutlet UIStepper *stepperOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *tipLabelOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *totalWithTipLabelOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *totalPerPersonLabelOutlet;
+
+
 
 @end
 
