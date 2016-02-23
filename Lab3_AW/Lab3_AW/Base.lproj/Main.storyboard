@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -101,18 +102,27 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tip percent" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGb-oR-6La">
                                         <rect key="frame" x="0.0" y="76" width="208" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="zGb-oR-6La" secondAttribute="height" multiplier="104:15" id="9hP-32-b3K"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="20%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yD-JY-LWi">
                                         <rect key="frame" x="216" y="76" width="51" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="8yD-JY-LWi" secondAttribute="height" multiplier="17:10" id="X37-sn-pY7"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="KIr-at-HX0">
                                         <rect key="frame" x="273" y="76" width="286" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="KIr-at-HX0" secondAttribute="height" multiplier="47:5" id="024-w2-vNL"/>
+                                        </constraints>
                                         <connections>
                                             <action selector="sliderModifiedTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="Po8-HP-Q44"/>
                                         </connections>
@@ -159,7 +169,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bj7-Yv-SEr">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bj7-Yv-SEr">
                                         <rect key="frame" x="510" y="0.0" width="51" height="31"/>
                                         <connections>
                                             <action selector="switchFlippedTipIncludesTax:" destination="BYZ-38-t0r" eventType="valueChanged" id="fvf-1V-3Qj"/>
@@ -194,7 +204,7 @@
                                     <constraint firstAttribute="trailing" secondItem="IR8-af-VFd" secondAttribute="trailing" id="MR7-lQ-nx5"/>
                                     <constraint firstAttribute="trailing" secondItem="8VZ-Dj-IEh" secondAttribute="trailing" id="MnO-2q-saO"/>
                                     <constraint firstItem="zGb-oR-6La" firstAttribute="top" secondItem="JfB-xK-o5s" secondAttribute="bottom" constant="8" id="O82-Og-Nyv"/>
-                                    <constraint firstAttribute="trailing" secondItem="KIr-at-HX0" secondAttribute="trailing" id="OFG-Ch-mNo"/>
+                                    <constraint firstAttribute="trailing" secondItem="KIr-at-HX0" secondAttribute="trailing" constant="3" id="OFG-Ch-mNo"/>
                                     <constraint firstItem="8yD-JY-LWi" firstAttribute="leading" secondItem="zGb-oR-6La" secondAttribute="trailing" constant="8" id="OHA-0L-Alg"/>
                                     <constraint firstItem="yWW-GI-vsL" firstAttribute="leading" secondItem="6f0-M1-h64" secondAttribute="leading" id="Ptt-cY-2P7"/>
                                     <constraint firstItem="U9a-we-i8A" firstAttribute="leading" secondItem="dyO-O2-Zd0" secondAttribute="trailing" constant="8" id="T9o-aK-YbO"/>

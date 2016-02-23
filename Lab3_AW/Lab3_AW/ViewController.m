@@ -3,7 +3,9 @@
 //  Lab3_AW
 //
 //  Created by Anthony Wittemann on 2/8/16.
+//  ****************USING 3 late days**********************
 //  Copyright © 2016 Anthony Wittemann. All rights reserved.
+//
 //
 
 #import "ViewController.h"
@@ -62,10 +64,6 @@
 /************* ADDED IBActions ****************/
 
 - (IBAction)segmentedControlTax:(id)sender {
-    //TODO
-}
-
-- (IBAction)onSegmentValueChanged:(UISegmentedControl *)sender {
     float tr = 0.075;
     switch ([sender selectedSegmentIndex]) {
         case 0: //7.5
@@ -86,35 +84,38 @@
         default:
             break;
     }
-    
-    //TODO update text fields
+    //update text fields
     [self updateValuesWithBill:self.model.bill tRate:tr TIC:self.model.tipIncludesTax tp:self.model.tipPercentage sm:self.model.splitNum];
 }
 
 - (IBAction)switchFlippedTipIncludesTax:(id)sender {
-    //TODO
+    bool tipIncludesTax = self.switchOutlet.isOn;
+    [self updateValuesWithBill:self.model.bill tRate:self.model.taxRate TIC:tipIncludesTax tp:self.model.tipPercentage sm:self.model.splitNum];
 }
 
 - (IBAction)sliderModifiedTip:(id)sender {
     //TODO
+    float sliderVal = self.sliderOutlet.value / 100.0;
+    [self updateValuesWithBill:self.model.bill tRate:self.model.taxRate TIC:self.model.tipIncludesTax tp:sliderVal sm:self.model.splitNum];
 }
 
 - (IBAction)stepperIncrementedSplitBill:(id)sender {
-    //TODO
+    int stepperVal = (int)self.stepperOutlet.value;
+    [self updateValuesWithBill:self.model.bill tRate:self.model.taxRate TIC:self.model.tipIncludesTax tp:self.model.tipPercentage sm:stepperVal];
+    
 }
 
 - (IBAction)clearAllPressed:(id)sender {
     //Helper method Actionsheet, UIAlertController
     [self bringUpAlertController];
-    
-    //helper method to clear all (update values)
-    //TODO can't figure out how to call a method in DataModel class
-    
 }
 
 
 - (IBAction)textFieldExit:(id)sender {
     [sender resignFirstResponder];
+    float bill = self.billTextField.text.floatValue;
+    //update textFields
+    [self updateValuesWithBill:bill tRate:self.model.taxRate TIC:self.model.tipIncludesTax tp:self.model.tipPercentage sm:self.model.splitNum];
 }
 
 - (void) touchesBegan: (NSSet *)touches
@@ -129,6 +130,9 @@
 
 - (IBAction) backgroundTouched:(id)sender {
     [self.billTextField resignFirstResponder];
+    float bill = self.billTextField.text.floatValue;
+    //update textFields
+    [self updateValuesWithBill:bill tRate:self.model.taxRate TIC:self.model.tipIncludesTax tp:self.model.tipPercentage sm:self.model.splitNum];
 }
 
 
@@ -137,14 +141,16 @@
 
 
 - (void) clearAllValues{
-    //TODO clear all values and update labels
+    //clear all values and update labels
+    [self updateValuesWithBill:0.0 tRate:0.075 TIC:false tp:0.20 sm:1];
     
     //reset controller values
-    [self.sliderOutlet setValue: 20 animated: YES];
+    [self.sliderOutlet setValue: 0.20 animated: YES];
     [self.stepperOutlet setValue: 1];
     [self.textFieldOutlet setText: @"" ];
-    [self.switchOutlet setOn: YES animated: YES];
+    [self.switchOutlet setOn: NO animated: YES];
     [self.segmentedControlOutlet setSelectedSegmentIndex: 0];
+    self.billTextField.text = @"";
 }
 
 - (void) updateValuesWithBill: (float) bill
@@ -164,12 +170,21 @@
     self.model.tipPercentage = tipPerc;
     self.model.splitNum = splitNum;
     self.model.tip = self.model.totalForTip * tipPerc;
-    self.model.totalWithTip = self.model.totalForTip + self.model.tip;
+    self.model.totalWithTip = self.model.bill + self.model.tip + self.model.tax;
     self.model.totalPerPerson = self.model.totalWithTip / splitNum;
     
-    //TODO update labels
-    self.taxLabel.text = [NSString stringWithFormat:@"%f", self.model.tax];
-    
+    //update labels
+    [self updateLabels];
+}
+
+- (void) updateLabels{
+    self.taxLabel.text = [NSString stringWithFormat:@"$%.2lf", self.model.tax];
+    self.TotalForTipLabel.text = [NSString stringWithFormat:@"$%.2lf", self.model.totalForTip];
+    self.splitNumLabel.text = [NSString stringWithFormat:@"%u", self.model.splitNum];
+    self.tipPercentageLabel.text = [NSString stringWithFormat:@"%.0lf%%", self.model.tipPercentage * 100];
+    self.tipLabelOutlet.text = [NSString stringWithFormat:@"$%.2lf", self.model.tip];
+    self.totalWithTipLabel.text = [NSString stringWithFormat:@"$%.2lf", self.model.totalWithTip];
+    self.totalPerPersonLabel.text = [NSString stringWithFormat:@"$%.2lf", self.model.totalPerPerson];
 }
 
 - (void) bringUpAlertController{
