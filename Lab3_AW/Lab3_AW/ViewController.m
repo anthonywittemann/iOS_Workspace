@@ -53,7 +53,9 @@
 
 -(IBAction)dismissKeyboard:(id)sender{
     [sender resignFirstResponder];
-    //TODO update textFields
+    float bill = self.billTextField.text.floatValue;
+    //update textFields
+    [self updateValuesWithBill:bill tRate:self.model.taxRate TIC:self.model.tipIncludesTax tp:self.model.tipPercentage sm:self.model.splitNum];
 }
 
 
@@ -64,25 +66,29 @@
 }
 
 - (IBAction)onSegmentValueChanged:(UISegmentedControl *)sender {
+    float tr = 0.075;
     switch ([sender selectedSegmentIndex]) {
         case 0: //7.5
-            
+            tr = 0.075;
             break;
         case 1: //8.0
-            
+            tr = 0.080;
             break;
         case 2: //8.5
-            
+            tr = 0.085;
             break;
         case 3: //9.0
-            
+            tr = 0.090;
             break;
         case 4: //9.5
-            
+            tr = 0.095;
             break;
         default:
             break;
     }
+    
+    //TODO update text fields
+    [self updateValuesWithBill:self.model.bill tRate:tr TIC:self.model.tipIncludesTax tp:self.model.tipPercentage sm:self.model.splitNum];
 }
 
 - (IBAction)switchFlippedTipIncludesTax:(id)sender {
@@ -98,9 +104,6 @@
 }
 
 - (IBAction)clearAllPressed:(id)sender {
-    //clear all fields
-    [self clearAllValues];
-    
     //Helper method Actionsheet, UIAlertController
     [self bringUpAlertController];
     
@@ -134,6 +137,7 @@
 
 
 - (void) clearAllValues{
+    //TODO clear all values and update labels
     
     //reset controller values
     [self.sliderOutlet setValue: 20 animated: YES];
@@ -141,6 +145,31 @@
     [self.textFieldOutlet setText: @"" ];
     [self.switchOutlet setOn: YES animated: YES];
     [self.segmentedControlOutlet setSelectedSegmentIndex: 0];
+}
+
+- (void) updateValuesWithBill: (float) bill
+                        tRate: (float) taxRate
+                          TIC:(bool) tipInclTax
+                           tp:(float) tipPerc
+                           sm: (uint) splitNum{
+    self.model.bill = bill;
+    self.model.taxRate = taxRate;
+    self.model.tax = bill * taxRate;
+    self.model.tipIncludesTax = tipInclTax;
+    if(tipInclTax){
+        self.model.totalForTip = (bill + self.model.tax);
+    } else{
+        self.model.totalForTip = bill;
+    }
+    self.model.tipPercentage = tipPerc;
+    self.model.splitNum = splitNum;
+    self.model.tip = self.model.totalForTip * tipPerc;
+    self.model.totalWithTip = self.model.totalForTip + self.model.tip;
+    self.model.totalPerPerson = self.model.totalWithTip / splitNum;
+    
+    //TODO update labels
+    self.taxLabel.text = [NSString stringWithFormat:@"%f", self.model.tax];
+    
 }
 
 - (void) bringUpAlertController{
@@ -151,7 +180,8 @@
                                    actionWithTitle:@"Cancel"  style:UIAlertActionStyleCancel  handler:^(UIAlertAction *action) { /* code */ }];
     
     UIAlertAction *clearAction = [UIAlertAction
-                                  actionWithTitle:@"Clear"  style:UIAlertActionStyleDestructive  handler:^(UIAlertAction *action) { /* code */ }];
+                                  actionWithTitle:@"Clear"  style:UIAlertActionStyleDestructive  handler:^(UIAlertAction *action) { //clear all fields
+                                      [self clearAllValues]; }];
     
     [alertController addAction:cancelAction];
     [alertController addAction:clearAction];

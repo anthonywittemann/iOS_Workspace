@@ -22,7 +22,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalWithTipLabelOutlet;
 @property (weak, nonatomic) IBOutlet UILabel *totalPerPersonLabelOutlet;
 
-
+- (void) updateValuesWithBill: (float) bill
+                        tRate: (float) taxRate
+                          TIC:(bool) tipInclTax
+                           tp:(float) tipPerc
+                           sm: (uint) splitNum;
 
 @end
 
