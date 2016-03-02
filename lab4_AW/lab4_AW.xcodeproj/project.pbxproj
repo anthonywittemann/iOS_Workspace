@@ -18,6 +18,7 @@
 		EDFA88821C878B46003BCE5C /* fadein.wav in Resources */ = {isa = PBXBuildFile; fileRef = EDFA887F1C878B46003BCE5C /* fadein.wav */; };
 		EDFA88831C878B46003BCE5C /* TaDa.wav in Resources */ = {isa = PBXBuildFile; fileRef = EDFA88801C878B46003BCE5C /* TaDa.wav */; };
 		EDFA88841C878B46003BCE5C /* tone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EDFA88811C878B46003BCE5C /* tone.mp3 */; };
+		EDFA888B1C878CAE003BCE5C /* FlashcardsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA888A1C878CAE003BCE5C /* FlashcardsModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		EDFA887F1C878B46003BCE5C /* fadein.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fadein.wav; sourceTree = "<group>"; };
 		EDFA88801C878B46003BCE5C /* TaDa.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = TaDa.wav; sourceTree = "<group>"; };
 		EDFA88811C878B46003BCE5C /* tone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tone.mp3; sourceTree = "<group>"; };
+		EDFA88891C878CAE003BCE5C /* FlashcardsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashcardsModel.h; sourceTree = "<group>"; };
+		EDFA888A1C878CAE003BCE5C /* FlashcardsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashcardsModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,15 +110,10 @@
 		EDFA88431C878A60003BCE5C /* lab4_AW */ = {
 			isa = PBXGroup;
 			children = (
+				EDFA88871C878BED003BCE5C /* Controller */,
+				EDFA88861C878BE7003BCE5C /* View */,
+				EDFA88851C878BDF003BCE5C /* Model */,
 				EDFA887E1C878B01003BCE5C /* Resources */,
-				EDFA88471C878A60003BCE5C /* AppDelegate.h */,
-				EDFA88481C878A60003BCE5C /* AppDelegate.m */,
-				EDFA884A1C878A60003BCE5C /* ViewController.h */,
-				EDFA884B1C878A60003BCE5C /* ViewController.m */,
-				EDFA884D1C878A60003BCE5C /* Main.storyboard */,
-				EDFA88501C878A60003BCE5C /* Assets.xcassets */,
-				EDFA88521C878A60003BCE5C /* LaunchScreen.storyboard */,
-				EDFA88551C878A60003BCE5C /* Info.plist */,
 				EDFA88441C878A60003BCE5C /* Supporting Files */,
 			);
 			path = lab4_AW;
@@ -124,6 +122,10 @@
 		EDFA88441C878A60003BCE5C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EDFA88471C878A60003BCE5C /* AppDelegate.h */,
+				EDFA88481C878A60003BCE5C /* AppDelegate.m */,
+				EDFA88521C878A60003BCE5C /* LaunchScreen.storyboard */,
+				EDFA88551C878A60003BCE5C /* Info.plist */,
 				EDFA88451C878A60003BCE5C /* main.m */,
 			);
 			name = "Supporting Files";
@@ -155,6 +157,33 @@
 				EDFA88811C878B46003BCE5C /* tone.mp3 */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		EDFA88851C878BDF003BCE5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EDFA88891C878CAE003BCE5C /* FlashcardsModel.h */,
+				EDFA888A1C878CAE003BCE5C /* FlashcardsModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EDFA88861C878BE7003BCE5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDFA88501C878A60003BCE5C /* Assets.xcassets */,
+				EDFA884D1C878A60003BCE5C /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		EDFA88871C878BED003BCE5C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EDFA884A1C878A60003BCE5C /* ViewController.h */,
+				EDFA884B1C878A60003BCE5C /* ViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDFA888B1C878CAE003BCE5C /* FlashcardsModel.m in Sources */,
 				EDFA884C1C878A60003BCE5C /* ViewController.m in Sources */,
 				EDFA88491C878A60003BCE5C /* AppDelegate.m in Sources */,
 				EDFA88461C878A60003BCE5C /* main.m in Sources */,
