@@ -43,9 +43,20 @@
     return self;
 }
 
++ (instancetype) sharedModel {
+    static FlashcardsModel *_sharedModel = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        // code to be executed once - thread safe version
+        _sharedModel = [[self alloc] init];
+    });
+    return _sharedModel;
+}
+
 - (NSDictionary *) randomFlashcard
 {
-    NSUInteger index = random() % [self numberOfFlashcards];
+    NSUInteger index = arc4random_uniform( (int)[self numberOfFlashcards] );
     return self.flashcards[index];
 }
 
@@ -103,11 +114,15 @@
 - (NSDictionary *) nextFlashcard
 {
    //TODO
+    NSDictionary *nextFlash;
+    return nextFlash;
 }
 
 - (NSDictionary *) prevFlashcard
 {
     //TODO
+    NSDictionary *prevFlash;
+    return prevFlash;
 }
 
 

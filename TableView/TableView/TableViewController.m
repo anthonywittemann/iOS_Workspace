@@ -7,8 +7,11 @@
 //
 
 #import "TableViewController.h"
+#import "QuotesModel.h"
 
 @interface TableViewController ()
+
+@property (strong, nonatomic) QuotesModel *model;
 
 @end
 
@@ -16,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.model = [QuotesModel sharedModel];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -47,7 +52,10 @@
     
     // Configure the cell...
     NSInteger index = indexPath.row;
-    cell.textLabel.text = [NSString stringWithFormat: @"Row #: %ld", (long)index];
+    NSDictionary *quote = [self.model quoteAtIndex:[index]];
+    
+    cell.textLabel.text = [quote objectForKey: kQuoteKey];
+    cell.detailTextLabel.text = [quote objectForKey: kAuthorKey];
     
     return cell;
 }

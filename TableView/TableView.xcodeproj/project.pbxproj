@@ -15,6 +15,7 @@
 		EDFA88B31C8E1DE1003BCE5C /* TableViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA88B21C8E1DE1003BCE5C /* TableViewTests.m */; };
 		EDFA88BE1C8E1DE1003BCE5C /* TableViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA88BD1C8E1DE1003BCE5C /* TableViewUITests.m */; };
 		EDFA88CD1C8E1EED003BCE5C /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA88CC1C8E1EED003BCE5C /* TableViewController.m */; };
+		EDFA88D01C8E2410003BCE5C /* QuotesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA88CF1C8E2410003BCE5C /* QuotesModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		EDFA88BF1C8E1DE1003BCE5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDFA88CB1C8E1EED003BCE5C /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		EDFA88CC1C8E1EED003BCE5C /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		EDFA88CE1C8E2410003BCE5C /* QuotesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuotesModel.h; sourceTree = "<group>"; };
+		EDFA88CF1C8E2410003BCE5C /* QuotesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuotesModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 		EDFA88971C8E1DE1003BCE5C /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				EDFA88CE1C8E2410003BCE5C /* QuotesModel.h */,
+				EDFA88CF1C8E2410003BCE5C /* QuotesModel.m */,
 				EDFA889B1C8E1DE1003BCE5C /* AppDelegate.h */,
 				EDFA889C1C8E1DE1003BCE5C /* AppDelegate.m */,
 				EDFA88A11C8E1DE1003BCE5C /* Main.storyboard */,
@@ -272,6 +277,7 @@
 			files = (
 				EDFA889D1C8E1DE1003BCE5C /* AppDelegate.m in Sources */,
 				EDFA889A1C8E1DE1003BCE5C /* main.m in Sources */,
+				EDFA88D01C8E2410003BCE5C /* QuotesModel.m in Sources */,
 				EDFA88CD1C8E1EED003BCE5C /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

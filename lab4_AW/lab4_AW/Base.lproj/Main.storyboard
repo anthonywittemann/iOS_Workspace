@@ -17,18 +17,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9B-zj-Lkr">
-                                <rect key="frame" x="279" y="518" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9B-zj-Lkr">
+                                <rect key="frame" x="20" y="494" width="560" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="ZqX-70-RuQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yf7-41-hNb">
+                                <rect key="frame" x="20" y="80" width="560" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="cH0-vI-iLs"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="qgi-p7-ayf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="d9B-zj-Lkr" secondAttribute="bottom" constant="20" id="8P6-g9-VK1"/>
+                            <constraint firstItem="d9B-zj-Lkr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sZD-RE-IwL"/>
+                            <constraint firstItem="Yf7-41-hNb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="scx-hX-xRX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="answerLabel" destination="d9B-zj-Lkr" id="uRP-PD-ynF"/>
+                        <outlet property="questionLabel" destination="Yf7-41-hNb" id="oTH-mV-rfW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="455" y="372"/>
         </scene>
     </scenes>
 </document>
