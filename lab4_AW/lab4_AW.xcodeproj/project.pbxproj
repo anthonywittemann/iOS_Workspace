@@ -19,6 +19,7 @@
 		EDFA88831C878B46003BCE5C /* TaDa.wav in Resources */ = {isa = PBXBuildFile; fileRef = EDFA88801C878B46003BCE5C /* TaDa.wav */; };
 		EDFA88841C878B46003BCE5C /* tone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EDFA88811C878B46003BCE5C /* tone.mp3 */; };
 		EDFA888B1C878CAE003BCE5C /* FlashcardsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA888A1C878CAE003BCE5C /* FlashcardsModel.m */; };
+		EDFA88D21C909994003BCE5C /* FlashcardsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA88D11C909994003BCE5C /* FlashcardsTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		EDFA88811C878B46003BCE5C /* tone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tone.mp3; sourceTree = "<group>"; };
 		EDFA88891C878CAE003BCE5C /* FlashcardsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashcardsModel.h; sourceTree = "<group>"; };
 		EDFA888A1C878CAE003BCE5C /* FlashcardsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashcardsModel.m; sourceTree = "<group>"; };
+		EDFA88D11C909994003BCE5C /* FlashcardsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashcardsTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			children = (
 				EDFA885E1C878A60003BCE5C /* lab4_AWTests.m */,
 				EDFA88601C878A60003BCE5C /* Info.plist */,
+				EDFA88D11C909994003BCE5C /* FlashcardsTest.m */,
 			);
 			path = lab4_AWTests;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDFA88D21C909994003BCE5C /* FlashcardsTest.m in Sources */,
 				EDFA885F1C878A60003BCE5C /* lab4_AWTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
