@@ -29,21 +29,6 @@
     [super tearDown];
 }
 
-- (void) logArray {
-    NSDictionary *question;
-    
-    for (NSUInteger i=0; i < [self.model numberOfFlashcards]; i++) {
-        question = [self.model flashcardAtIndex: i];
-        
-        //        NSLog (@"Quote: %@ Author: %@", [quote objectForKey: kQuoteKey],
-        //               [quote objectForKey: kAuthorKey]);
-        
-        NSLog(@"Question: %@ Answer: %@", question[kQuestionKey],
-              question[kAnswerKey] );
-    }
-    NSLog(@" ");
-}
-
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -58,16 +43,16 @@
 }
 
 
-- (void) testInsert {
+- (void) testInsertFlashcardAtIndex {
     // local variables
     NSUInteger num;
     NSUInteger index;
     NSDictionary *flashcard, *addedFlashcard;
     
     num = [self.model numberOfFlashcards];
-    index = 0;
+    index = num;
     
-    // Insert quote
+    // Insert flashcard
     flashcard = [NSDictionary dictionaryWithObjectsAndKeys:
              @"Who's doing the testing?", kQuestionKey,
              @"Anthony Wittemann", kAnswerKey, nil];
@@ -78,19 +63,93 @@
     XCTAssertEqualObjects(flashcard, addedFlashcard);
 }
 
-- (void) testRemove {
+- (void) testRemoveFlashcardAtIndex {
     // local variables
     NSUInteger num;
     NSUInteger index;
     
     num = [self.model numberOfFlashcards];
-    index = 0;
+    index = num - 1;
     
-    // Remove quote
+    // Remove flashcard
     [self.model removeFlashcardAtIndex: index];
     num = num - 1;
     XCTAssertEqual(num, [self.model numberOfFlashcards]);
 }
+
+
+- (void)testInsertFlashcard {
+    // local variables
+    NSUInteger num;
+    NSUInteger index;
+    NSDictionary *flashcard, *addedFlashcard;
+    
+    num = [self.model numberOfFlashcards];
+    index = num;
+    
+    // Insert flashcard
+    flashcard = [NSDictionary dictionaryWithObjectsAndKeys:
+                 @"Who's doing the testing?", kQuestionKey,
+                 @"Anthony Wittemann", kAnswerKey, nil];
+    [self.model insertFlashcard: flashcard];
+    num = num + 1;
+    XCTAssertEqual(num, [self.model numberOfFlashcards]);
+    addedFlashcard = [self.model flashcardAtIndex:index];
+    XCTAssertEqualObjects(flashcard, addedFlashcard);
+}
+
+- (void)testInsertFlashcardAnswer {
+    //TODO How should we test this? - test for object equality...
+    
+    // local variables
+    NSUInteger num;
+    NSUInteger index;
+    NSString * question;
+    NSString * ans;
+    NSDictionary *flashcard, *addedFlashcardAnswer;
+    
+    num = [self.model numberOfFlashcards];
+    index = num;
+    
+    // Insert flashcard
+    
+    question = @"Who's doing the testing?";
+    ans = @"Anthony Wittemann";
+    flashcard = [NSDictionary dictionaryWithObjectsAndKeys:
+                 question, kQuestionKey,
+                 ans, kAnswerKey, nil];
+    [self.model insertFlashcard: question answer:ans];
+    num = num + 1;
+    XCTAssertEqual(num, [self.model numberOfFlashcards]);
+    addedFlashcardAnswer = [self.model flashcardAtIndex:index];
+    XCTAssertEqualObjects(flashcard, addedFlashcardAnswer);
+}
+
+- (void)testInsertFlashcardAnswerAtIndex {
+    // local variables
+    NSUInteger num;
+    NSUInteger index;
+    NSString * question;
+    NSString * ans;
+    NSDictionary *flashcard, *addedFlashcardAnswer;
+    
+    num = [self.model numberOfFlashcards];
+    index = num - 1;
+    
+    // Insert flashcard
+    
+    question = @"Who's doing the testing?";
+    ans = @"Anthony Wittemann";
+    flashcard = [NSDictionary dictionaryWithObjectsAndKeys:
+                 question, kQuestionKey,
+                 ans, kAnswerKey, nil];
+    [self.model insertFlashcard: question answer:ans atIndex: index];
+    num = num + 1;
+    XCTAssertEqual(num, [self.model numberOfFlashcards]);
+    addedFlashcardAnswer = [self.model flashcardAtIndex:index];
+    XCTAssertEqualObjects(flashcard, addedFlashcardAnswer);
+}
+
 
 
 - (void)testPerformanceExample {

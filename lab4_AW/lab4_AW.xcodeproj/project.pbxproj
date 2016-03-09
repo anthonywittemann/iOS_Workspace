@@ -13,7 +13,6 @@
 		EDFA884F1C878A60003BCE5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDFA884D1C878A60003BCE5C /* Main.storyboard */; };
 		EDFA88511C878A60003BCE5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDFA88501C878A60003BCE5C /* Assets.xcassets */; };
 		EDFA88541C878A60003BCE5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDFA88521C878A60003BCE5C /* LaunchScreen.storyboard */; };
-		EDFA885F1C878A60003BCE5C /* lab4_AWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA885E1C878A60003BCE5C /* lab4_AWTests.m */; };
 		EDFA886A1C878A60003BCE5C /* lab4_AWUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA88691C878A60003BCE5C /* lab4_AWUITests.m */; };
 		EDFA88821C878B46003BCE5C /* fadein.wav in Resources */ = {isa = PBXBuildFile; fileRef = EDFA887F1C878B46003BCE5C /* fadein.wav */; };
 		EDFA88831C878B46003BCE5C /* TaDa.wav in Resources */ = {isa = PBXBuildFile; fileRef = EDFA88801C878B46003BCE5C /* TaDa.wav */; };
@@ -51,7 +50,6 @@
 		EDFA88531C878A60003BCE5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDFA88551C878A60003BCE5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDFA885A1C878A60003BCE5C /* lab4_AWTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lab4_AWTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDFA885E1C878A60003BCE5C /* lab4_AWTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lab4_AWTests.m; sourceTree = "<group>"; };
 		EDFA88601C878A60003BCE5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDFA88651C878A60003BCE5C /* lab4_AWUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lab4_AWUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDFA88691C878A60003BCE5C /* lab4_AWUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lab4_AWUITests.m; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 		EDFA885D1C878A60003BCE5C /* lab4_AWTests */ = {
 			isa = PBXGroup;
 			children = (
-				EDFA885E1C878A60003BCE5C /* lab4_AWTests.m */,
 				EDFA88601C878A60003BCE5C /* Info.plist */,
 				EDFA88D11C909994003BCE5C /* FlashcardsTest.m */,
 			);
@@ -334,7 +331,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDFA88D21C909994003BCE5C /* FlashcardsTest.m in Sources */,
-				EDFA885F1C878A60003BCE5C /* lab4_AWTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
