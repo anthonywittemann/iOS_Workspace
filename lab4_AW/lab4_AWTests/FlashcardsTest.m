@@ -99,8 +99,6 @@
 }
 
 - (void)testInsertFlashcardAnswer {
-    //TODO How should we test this? - test for object equality...
-    
     // local variables
     NSUInteger num;
     NSUInteger index;

@@ -25,17 +25,13 @@
 
 @implementation ViewController
 
-//TODO GESTURE RECOGNIZERS to display a random flashcard if the view is tapped
-//and handle swiping left and right
-
 /* TODO
- Add the shake motion to the View Controller:
- – Add the proper motion-handling method. If the motion detected is a shake
- motion, then call a method to get a random flashcard and display it. • Add animations to the View Controller:
+ 
+ • Add animations to the View Controller:
  – Use Animations to have the flashcard label animate. Have the old flashcard fade out and then have a new question or answer fade in. You may also make other changes to the label. You may have to make some helper methods.
+ 
  • Add audio to the View Controller:
  – Set up the AVAudioPlayer in the viewDidLoad method.
- Page 2 of 3
  – Add code to the tap and swipe gesture methods to play the sound file.
  – Add code to play the sound when the device is shaked.
  */
@@ -44,11 +40,96 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    //Add Gesture Recognizers
+    //single tap
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapRecognized:)];
+    [self.view addGestureRecognizer: singleTap];
+    
+    //double tap
+    UITapGestureRecognizer *doubleTap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapRecognized:)];
+    [doubleTap setNumberOfTapsRequired:2];
+    [self.view addGestureRecognizer: doubleTap];
+    
+    [singleTap requireGestureRecognizerToFail: doubleTap];
+    
+    //swipe left
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeftGestureRecognized:)];
+    swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer: swipeLeft];
+    
+    //swipe right
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRightGestureRecognized:)];
+    swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer: swipeRight];
+    
+    //initialize data
     self.model = [[FlashcardsModel alloc] init];
     NSDictionary *question = [self.model randomFlashcard];
     self.questionLabel.text = question[kQuestionKey];
     self.answerLabel.text = question[kAnswerKey];
 }
+
+/*
+ ------------------------------ Tapping and Swiping -------------------------------------
+ */
+
+- (void) singleTapRecognized: (UITapGestureRecognizer *) recognizer{
+    //change to random card on single tap
+    NSDictionary * newFlashcard = [self.model randomFlashcard];
+    [self updateFlashcards: newFlashcard];
+    
+}
+
+- (void) doubleTapRecognized: (UITapGestureRecognizer *) recognizer{
+    //change to random card on double tap
+    NSDictionary * newFlashcard = [self.model randomFlashcard];
+    [self updateFlashcards: newFlashcard];
+}
+
+- (void) swipeLeftGestureRecognized: (UITapGestureRecognizer *) recognizer{
+    //change to previous card
+    NSDictionary * newFlashcard = [self.model prevFlashcard];
+    [self updateFlashcards: newFlashcard];
+}
+
+- (void) swipeRightGestureRecognized: (UITapGestureRecognizer *) recognizer{
+    //change to next card
+    NSDictionary * newFlashcard = [self.model nextFlashcard];
+    [self updateFlashcards: newFlashcard];
+}
+
+//helper method to update the text in labels
+- (void) updateFlashcards: (NSDictionary *) newFlashcard{
+    NSString * answer = newFlashcard[kAnswerKey];
+    NSString * question = newFlashcard[kQuestionKey];
+    
+    self.questionLabel.text = question;
+    self.answerLabel.text = answer;
+    
+    //TODO add animations here******************************************************
+}
+
+/*
+ ------------------------------ Shake Motion Detection -------------------------------------
+ */
+- (BOOL) canBecomeFirstResponder{
+    return YES;
+}
+
+- (void) viewDidAppear: (BOOL) animated {
+    [super viewDidAppear: animated];
+    [self becomeFirstResponder];
+}
+
+- (void) motionEnded: (UIEventSubtype) motion withEvent: (UIEvent *) event{
+    if(motion == UIEventSubtypeMotionShake){
+        //random card
+        NSDictionary * newFlashcard = [self.model randomFlashcard];
+        [self updateFlashcards: newFlashcard];
+    }
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

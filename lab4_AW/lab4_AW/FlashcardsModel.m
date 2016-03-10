@@ -12,6 +12,7 @@
 
 //private properties
 @property (strong, nonatomic) NSMutableArray *flashcards;
+@property (readwrite, assign) NSUInteger currentIndex;
 
 @end
 
@@ -37,7 +38,7 @@
         
         
         _flashcards = [[NSMutableArray alloc] initWithObjects: flashcard1, flashcard2, flashcard3, flashcard4, flashcard5, nil];
-        
+        _currentIndex = 0;
         
     }
     return self;
@@ -54,9 +55,11 @@
     return _sharedModel;
 }
 
+
 - (NSDictionary *) randomFlashcard
 {
     NSUInteger index = arc4random_uniform( (int)[self numberOfFlashcards] );
+    self.currentIndex = index;
     return self.flashcards[index];
 }
 
@@ -113,15 +116,23 @@
 
 - (NSDictionary *) nextFlashcard
 {
-   //TODO
-    NSDictionary *nextFlash;
+    if(self.currentIndex == [self numberOfFlashcards] - 1){
+        self.currentIndex = 0;
+    } else{
+        self.currentIndex += 1;
+    }
+    NSDictionary *nextFlash = self.flashcards[self.currentIndex];
     return nextFlash;
 }
 
 - (NSDictionary *) prevFlashcard
 {
-    //TODO
-    NSDictionary *prevFlash;
+    if(self.currentIndex == 0){
+        self.currentIndex = [self numberOfFlashcards] - 1;
+    } else{
+        self.currentIndex -= 1;
+    }
+    NSDictionary *prevFlash = self.flashcards[self.currentIndex];
     return prevFlash;
 }
 
