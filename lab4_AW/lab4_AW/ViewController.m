@@ -8,11 +8,15 @@
 
 #import "ViewController.h"
 #import "FlashcardsModel.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface ViewController ()
 
 //private properties
 @property (strong, nonatomic) FlashcardsModel *model;
+@property (readonly) SystemSoundID fadeInSoundFileID;
+@property (readonly) SystemSoundID taDaSoundFileID;
+@property (readonly) SystemSoundID toneSoundFileID;
 
 
 //IBOutlets
@@ -27,11 +31,7 @@
 
 /* TODO
  
- • Add animations to the View Controller:
- – Use Animations to have the flashcard label animate. Have the old flashcard fade out and then have a new question or answer fade in. You may also make other changes to the label. You may have to make some helper methods.
- 
  • Add audio to the View Controller:
- – Set up the AVAudioPlayer in the viewDidLoad method.
  – Add code to the tap and swipe gesture methods to play the sound file.
  – Add code to play the sound when the device is shaked.
  */
@@ -62,6 +62,20 @@
     swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer: swipeRight];
     
+    //set up audio file handling
+    NSString *fadeInSoundfilePath = [[NSBundle mainBundle] pathForResource:@"fadein" ofType:@"wav"];
+    NSURL *fadeInSoundURL = [NSURL fileURLWithPath: fadeInSoundfilePath];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef) fadeInSoundURL, &_fadeInSoundFileID);
+    
+    NSString *taDaSoundfilePath = [[NSBundle mainBundle] pathForResource:@"TaDa" ofType:@"wav"];
+    NSURL *taDaSoundURL = [NSURL fileURLWithPath: taDaSoundfilePath];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef) taDaSoundURL, &_taDaSoundFileID);
+    
+    NSString *toneSoundfilePath = [[NSBundle mainBundle] pathForResource:@"tone" ofType:@"mp3"];
+    NSURL *toneSoundURL = [NSURL fileURLWithPath: toneSoundfilePath];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef) toneSoundURL, &_toneSoundFileID);
+    
+    
     //initialize data
     self.model = [[FlashcardsModel alloc] init];
     NSDictionary *question = [self.model randomFlashcard];
@@ -77,36 +91,67 @@
     //change to random card on single tap
     NSDictionary * newFlashcard = [self.model randomFlashcard];
     [self updateFlashcards: newFlashcard];
-    
+    //play sound
+    AudioServicesPlaySystemSound(self.fadeInSoundFileID);
 }
 
 - (void) doubleTapRecognized: (UITapGestureRecognizer *) recognizer{
     //change to random card on double tap
     NSDictionary * newFlashcard = [self.model randomFlashcard];
     [self updateFlashcards: newFlashcard];
+    //play sound
+    AudioServicesPlaySystemSound(self.fadeInSoundFileID);
 }
 
 - (void) swipeLeftGestureRecognized: (UITapGestureRecognizer *) recognizer{
     //change to previous card
     NSDictionary * newFlashcard = [self.model prevFlashcard];
     [self updateFlashcards: newFlashcard];
+    //play sound
+    AudioServicesPlaySystemSound(self.taDaSoundFileID);
 }
 
 - (void) swipeRightGestureRecognized: (UITapGestureRecognizer *) recognizer{
     //change to next card
     NSDictionary * newFlashcard = [self.model nextFlashcard];
     [self updateFlashcards: newFlashcard];
+    //play sound
+    AudioServicesPlaySystemSound(self.taDaSoundFileID);
 }
 
 //helper method to update the text in labels
 - (void) updateFlashcards: (NSDictionary *) newFlashcard{
-    NSString * answer = newFlashcard[kAnswerKey];
-    NSString * question = newFlashcard[kQuestionKey];
+    //fade out, fade in with new card
+    [self fadeOutAnimateFlashcard: newFlashcard];
     
-    self.questionLabel.text = question;
-    self.answerLabel.text = answer;
-    
-    //TODO add animations here******************************************************
+}
+
+- (void) fadeOutAnimateFlashcard: (NSDictionary *) flashcard{
+    [UIView animateWithDuration: 1.0 animations:^{
+        //Fade out old text of label
+        self.answerLabel.alpha = 0;
+        self.questionLabel.alpha = 0;
+        }
+        completion:^(BOOL finished){
+            //Upon completion call fadeOutAnimateFlashcard
+            [self fadeInAnimateFlashcard: flashcard];
+        }
+     ];
+}
+
+- (void) fadeInAnimateFlashcard: (NSDictionary *) newFlashcard{
+    [UIView animateWithDuration: 1.0 animations:^{
+        NSString * answer = newFlashcard[kAnswerKey];
+        NSString * question = newFlashcard[kQuestionKey];
+        
+        self.questionLabel.text = question;
+        self.answerLabel.text = answer;
+        
+        //Fade out old text of label
+        self.answerLabel.alpha = 1;
+        self.questionLabel.alpha = 1;
+    }
+     ];
 }
 
 /*
@@ -126,6 +171,8 @@
         //random card
         NSDictionary * newFlashcard = [self.model randomFlashcard];
         [self updateFlashcards: newFlashcard];
+        //play sound
+        AudioServicesPlaySystemSound(self.toneSoundFileID);
     }
 }
 
