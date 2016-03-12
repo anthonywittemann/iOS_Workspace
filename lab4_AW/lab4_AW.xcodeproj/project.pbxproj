@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED00DF471C923C0600725C88 /* flashcard120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = ED00DF451C923C0600725C88 /* flashcard120x120.png */; };
+		ED00DF481C923C0600725C88 /* flashcard180x180.png in Resources */ = {isa = PBXBuildFile; fileRef = ED00DF461C923C0600725C88 /* flashcard180x180.png */; };
 		EDFA88461C878A60003BCE5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA88451C878A60003BCE5C /* main.m */; };
 		EDFA88491C878A60003BCE5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA88481C878A60003BCE5C /* AppDelegate.m */; };
 		EDFA884C1C878A60003BCE5C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDFA884B1C878A60003BCE5C /* ViewController.m */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED00DF451C923C0600725C88 /* flashcard120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashcard120x120.png; sourceTree = "<group>"; };
+		ED00DF461C923C0600725C88 /* flashcard180x180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashcard180x180.png; sourceTree = "<group>"; };
 		EDFA88411C878A60003BCE5C /* lab4_AW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lab4_AW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDFA88451C878A60003BCE5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EDFA88471C878A60003BCE5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 		EDFA887E1C878B01003BCE5C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ED00DF451C923C0600725C88 /* flashcard120x120.png */,
+				ED00DF461C923C0600725C88 /* flashcard180x180.png */,
 				EDFA887F1C878B46003BCE5C /* fadein.wav */,
 				EDFA88801C878B46003BCE5C /* TaDa.wav */,
 				EDFA88811C878B46003BCE5C /* tone.mp3 */,
@@ -290,9 +296,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDFA88541C878A60003BCE5C /* LaunchScreen.storyboard in Resources */,
+				ED00DF481C923C0600725C88 /* flashcard180x180.png in Resources */,
 				EDFA88831C878B46003BCE5C /* TaDa.wav in Resources */,
 				EDFA88841C878B46003BCE5C /* tone.mp3 in Resources */,
 				EDFA88821C878B46003BCE5C /* fadein.wav in Resources */,
+				ED00DF471C923C0600725C88 /* flashcard120x120.png in Resources */,
 				EDFA88511C878A60003BCE5C /* Assets.xcassets in Resources */,
 				EDFA884F1C878A60003BCE5C /* Main.storyboard in Resources */,
 			);
@@ -546,6 +554,7 @@
 				EDFA88701C878A60003BCE5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDFA88711C878A60003BCE5C /* Build configuration list for PBXNativeTarget "lab4_AWTests" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +563,7 @@
 				EDFA88731C878A60003BCE5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDFA88741C878A60003BCE5C /* Build configuration list for PBXNativeTarget "lab4_AWUITests" */ = {
 			isa = XCConfigurationList;
@@ -562,6 +572,7 @@
 				EDFA88761C878A60003BCE5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
