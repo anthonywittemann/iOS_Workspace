@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9B-zj-Lkr">
+                                <rect key="frame" x="20" y="430" width="560" height="150"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="d16-KQ-4Ck"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yf7-41-hNb">
+                                <rect key="frame" x="20" y="80" width="560" height="300"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="cH0-vI-iLs"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="qgi-p7-ayf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Yf7-41-hNb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7JV-BM-jFG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="d9B-zj-Lkr" secondAttribute="bottom" constant="20" id="8P6-g9-VK1"/>
+                            <constraint firstItem="d9B-zj-Lkr" firstAttribute="width" secondItem="Yf7-41-hNb" secondAttribute="width" id="AOF-2L-cer"/>
+                            <constraint firstItem="d9B-zj-Lkr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ju6-CC-qXp"/>
+                            <constraint firstItem="d9B-zj-Lkr" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="NqS-PU-Z5b"/>
+                            <constraint firstItem="d9B-zj-Lkr" firstAttribute="trailing" secondItem="Yf7-41-hNb" secondAttribute="trailing" id="Yoa-FT-fQk"/>
+                            <constraint firstItem="d9B-zj-Lkr" firstAttribute="leading" secondItem="Yf7-41-hNb" secondAttribute="leading" id="qB3-yl-gF9"/>
+                            <constraint firstItem="Yf7-41-hNb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="qfx-XW-BEg"/>
+                            <constraint firstItem="Yf7-41-hNb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rnm-gY-q2f"/>
+                            <constraint firstItem="d9B-zj-Lkr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sZD-RE-IwL"/>
+                            <constraint firstItem="Yf7-41-hNb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="scx-hX-xRX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="answerLabel" destination="d9B-zj-Lkr" id="uRP-PD-ynF"/>
+                        <outlet property="questionLabel" destination="Yf7-41-hNb" id="oTH-mV-rfW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="455" y="372"/>
+        </scene>
+    </scenes>
+</document>
