@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EDFA88401C878A60003BCE5C"
-               BuildableName = "lab4_AW.app"
-               BlueprintName = "lab4_AW"
-               ReferencedContainer = "container:lab4_AW.xcodeproj">
+               BuildableName = "lab5_AW.app"
+               BlueprintName = "lab5_AW"
+               ReferencedContainer = "container:lab5_AW.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EDFA88591C878A60003BCE5C"
-               BuildableName = "lab4_AWTests.xctest"
-               BlueprintName = "lab4_AWTests"
-               ReferencedContainer = "container:lab4_AW.xcodeproj">
+               BuildableName = "lab5_AW.xctest"
+               BlueprintName = "lab5_AWTests"
+               ReferencedContainer = "container:lab5_AW.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EDFA88641C878A60003BCE5C"
-               BuildableName = "lab4_AWUITests.xctest"
-               BlueprintName = "lab4_AWUITests"
-               ReferencedContainer = "container:lab4_AW.xcodeproj">
+               BuildableName = "lab5_AW.xctest"
+               BlueprintName = "lab5_AWUITests"
+               ReferencedContainer = "container:lab5_AW.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EDFA88401C878A60003BCE5C"
-            BuildableName = "lab4_AW.app"
-            BlueprintName = "lab4_AW"
-            ReferencedContainer = "container:lab4_AW.xcodeproj">
+            BuildableName = "lab5_AW.app"
+            BlueprintName = "lab5_AW"
+            ReferencedContainer = "container:lab5_AW.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EDFA88401C878A60003BCE5C"
-            BuildableName = "lab4_AW.app"
-            BlueprintName = "lab4_AW"
-            ReferencedContainer = "container:lab4_AW.xcodeproj">
+            BuildableName = "lab5_AW.app"
+            BlueprintName = "lab5_AW"
+            ReferencedContainer = "container:lab5_AW.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EDFA88401C878A60003BCE5C"
-            BuildableName = "lab4_AW.app"
-            BlueprintName = "lab4_AW"
-            ReferencedContainer = "container:lab4_AW.xcodeproj">
+            BuildableName = "lab5_AW.app"
+            BlueprintName = "lab5_AW"
+            ReferencedContainer = "container:lab5_AW.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -43,7 +43,7 @@
 /* Begin PBXFileReference section */
 		ED00DF451C923C0600725C88 /* flashcard120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashcard120x120.png; sourceTree = "<group>"; };
 		ED00DF461C923C0600725C88 /* flashcard180x180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashcard180x180.png; sourceTree = "<group>"; };
-		EDFA88411C878A60003BCE5C /* lab4_AW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lab4_AW.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDFA88411C878A60003BCE5C /* lab5_AW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lab5_AW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDFA88451C878A60003BCE5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EDFA88471C878A60003BCE5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EDFA88481C878A60003BCE5C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,9 +53,9 @@
 		EDFA88501C878A60003BCE5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDFA88531C878A60003BCE5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDFA88551C878A60003BCE5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDFA885A1C878A60003BCE5C /* lab4_AWTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lab4_AWTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDFA885A1C878A60003BCE5C /* lab5_AW.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lab5_AW.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDFA88601C878A60003BCE5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDFA88651C878A60003BCE5C /* lab4_AWUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lab4_AWUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDFA88651C878A60003BCE5C /* lab5_AW.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lab5_AW.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDFA88691C878A60003BCE5C /* lab4_AWUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lab4_AWUITests.m; sourceTree = "<group>"; };
 		EDFA886B1C878A60003BCE5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDFA887F1C878B46003BCE5C /* fadein.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fadein.wav; sourceTree = "<group>"; };
@@ -104,9 +104,9 @@
 		EDFA88421C878A60003BCE5C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EDFA88411C878A60003BCE5C /* lab4_AW.app */,
-				EDFA885A1C878A60003BCE5C /* lab4_AWTests.xctest */,
-				EDFA88651C878A60003BCE5C /* lab4_AWUITests.xctest */,
+				EDFA88411C878A60003BCE5C /* lab5_AW.app */,
+				EDFA885A1C878A60003BCE5C /* lab5_AW.xctest */,
+				EDFA88651C878A60003BCE5C /* lab5_AW.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -195,9 +195,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EDFA88401C878A60003BCE5C /* lab4_AW */ = {
+		EDFA88401C878A60003BCE5C /* lab5_AW */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDFA886E1C878A60003BCE5C /* Build configuration list for PBXNativeTarget "lab4_AW" */;
+			buildConfigurationList = EDFA886E1C878A60003BCE5C /* Build configuration list for PBXNativeTarget "lab5_AW" */;
 			buildPhases = (
 				EDFA883D1C878A60003BCE5C /* Sources */,
 				EDFA883E1C878A60003BCE5C /* Frameworks */,
@@ -207,14 +207,14 @@
 			);
 			dependencies = (
 			);
-			name = lab4_AW;
+			name = lab5_AW;
 			productName = lab4_AW;
-			productReference = EDFA88411C878A60003BCE5C /* lab4_AW.app */;
+			productReference = EDFA88411C878A60003BCE5C /* lab5_AW.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EDFA88591C878A60003BCE5C /* lab4_AWTests */ = {
+		EDFA88591C878A60003BCE5C /* lab5_AWTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDFA88711C878A60003BCE5C /* Build configuration list for PBXNativeTarget "lab4_AWTests" */;
+			buildConfigurationList = EDFA88711C878A60003BCE5C /* Build configuration list for PBXNativeTarget "lab5_AWTests" */;
 			buildPhases = (
 				EDFA88561C878A60003BCE5C /* Sources */,
 				EDFA88571C878A60003BCE5C /* Frameworks */,
@@ -225,14 +225,14 @@
 			dependencies = (
 				EDFA885C1C878A60003BCE5C /* PBXTargetDependency */,
 			);
-			name = lab4_AWTests;
+			name = lab5_AWTests;
 			productName = lab4_AWTests;
-			productReference = EDFA885A1C878A60003BCE5C /* lab4_AWTests.xctest */;
+			productReference = EDFA885A1C878A60003BCE5C /* lab5_AW.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EDFA88641C878A60003BCE5C /* lab4_AWUITests */ = {
+		EDFA88641C878A60003BCE5C /* lab5_AWUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EDFA88741C878A60003BCE5C /* Build configuration list for PBXNativeTarget "lab4_AWUITests" */;
+			buildConfigurationList = EDFA88741C878A60003BCE5C /* Build configuration list for PBXNativeTarget "lab5_AWUITests" */;
 			buildPhases = (
 				EDFA88611C878A60003BCE5C /* Sources */,
 				EDFA88621C878A60003BCE5C /* Frameworks */,
@@ -243,9 +243,9 @@
 			dependencies = (
 				EDFA88671C878A60003BCE5C /* PBXTargetDependency */,
 			);
-			name = lab4_AWUITests;
+			name = lab5_AWUITests;
 			productName = lab4_AWUITests;
-			productReference = EDFA88651C878A60003BCE5C /* lab4_AWUITests.xctest */;
+			productReference = EDFA88651C878A60003BCE5C /* lab5_AW.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -270,7 +270,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EDFA883C1C878A60003BCE5C /* Build configuration list for PBXProject "lab4_AW" */;
+			buildConfigurationList = EDFA883C1C878A60003BCE5C /* Build configuration list for PBXProject "lab5_AW" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -283,9 +283,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EDFA88401C878A60003BCE5C /* lab4_AW */,
-				EDFA88591C878A60003BCE5C /* lab4_AWTests */,
-				EDFA88641C878A60003BCE5C /* lab4_AWUITests */,
+				EDFA88401C878A60003BCE5C /* lab5_AW */,
+				EDFA88591C878A60003BCE5C /* lab5_AWTests */,
+				EDFA88641C878A60003BCE5C /* lab5_AWUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -355,12 +355,12 @@
 /* Begin PBXTargetDependency section */
 		EDFA885C1C878A60003BCE5C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EDFA88401C878A60003BCE5C /* lab4_AW */;
+			target = EDFA88401C878A60003BCE5C /* lab5_AW */;
 			targetProxy = EDFA885B1C878A60003BCE5C /* PBXContainerItemProxy */;
 		};
 		EDFA88671C878A60003BCE5C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EDFA88401C878A60003BCE5C /* lab4_AW */;
+			target = EDFA88401C878A60003BCE5C /* lab5_AW */;
 			targetProxy = EDFA88661C878A60003BCE5C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -471,8 +471,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = lab4_AW/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.usc.lab4-AW";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.usc.lab5-AW";
+				PRODUCT_NAME = lab5_AW;
 			};
 			name = Debug;
 		};
@@ -482,8 +482,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = lab4_AW/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.usc.lab4-AW";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.usc.lab5-AW";
+				PRODUCT_NAME = lab5_AW;
 			};
 			name = Release;
 		};
@@ -494,8 +494,8 @@
 				INFOPLIST_FILE = lab4_AWTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.usc.lab4-AWTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lab4_AW.app/lab4_AW";
+				PRODUCT_NAME = lab5_AW;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lab5_AW.app/lab5_AW";
 			};
 			name = Debug;
 		};
@@ -506,8 +506,8 @@
 				INFOPLIST_FILE = lab4_AWTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.usc.lab4-AWTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lab4_AW.app/lab4_AW";
+				PRODUCT_NAME = lab5_AW;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lab5_AW.app/lab5_AW";
 			};
 			name = Release;
 		};
@@ -517,7 +517,7 @@
 				INFOPLIST_FILE = lab4_AWUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.usc.lab4-AWUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = lab5_AW;
 				TEST_TARGET_NAME = lab4_AW;
 				USES_XCTRUNNER = YES;
 			};
@@ -529,7 +529,7 @@
 				INFOPLIST_FILE = lab4_AWUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.usc.lab4-AWUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = lab5_AW;
 				TEST_TARGET_NAME = lab4_AW;
 				USES_XCTRUNNER = YES;
 			};
@@ -538,7 +538,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EDFA883C1C878A60003BCE5C /* Build configuration list for PBXProject "lab4_AW" */ = {
+		EDFA883C1C878A60003BCE5C /* Build configuration list for PBXProject "lab5_AW" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EDFA886C1C878A60003BCE5C /* Debug */,
@@ -547,7 +547,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDFA886E1C878A60003BCE5C /* Build configuration list for PBXNativeTarget "lab4_AW" */ = {
+		EDFA886E1C878A60003BCE5C /* Build configuration list for PBXNativeTarget "lab5_AW" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EDFA886F1C878A60003BCE5C /* Debug */,
@@ -556,7 +556,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDFA88711C878A60003BCE5C /* Build configuration list for PBXNativeTarget "lab4_AWTests" */ = {
+		EDFA88711C878A60003BCE5C /* Build configuration list for PBXNativeTarget "lab5_AWTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EDFA88721C878A60003BCE5C /* Debug */,
@@ -565,7 +565,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EDFA88741C878A60003BCE5C /* Build configuration list for PBXNativeTarget "lab4_AWUITests" */ = {
+		EDFA88741C878A60003BCE5C /* Build configuration list for PBXNativeTarget "lab5_AWUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EDFA88751C878A60003BCE5C /* Debug */,
