@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Places</key>
+	<array>
+		<dict>
+			<key>Image</key>
+			<string>six_flags_magic_mountain.png</string>
+			<key>Name</key>
+			<string>Six Flags Magic Mountain</string>
+			<key>Website</key>
+			<string>https://www.sixflags.com/magicmountain</string>
+		</dict>
+		<dict>
+			<key>Image</key>
+			<string>universal_studios.png</string>
+			<key>Name</key>
+			<string>Universal Studios</string>
+			<key>Website</key>
+			<string>http://www.universalstudioshollywood.com/</string>
+		</dict>
+		<dict>
+			<key>Image</key>
+			<string>usc.png</string>
+			<key>Name</key>
+			<string>USC</string>
+			<key>Website</key>
+			<string>http://www.usc.edu/</string>
+		</dict>
+		<dict>
+			<key>Image</key>
+			<string>ucla.png</string>
+			<key>Name</key>
+			<string>UCLA</string>
+			<key>Website</key>
+			<string>http://www.ucla.edu/</string>
+		</dict>
+		<dict>
+			<key>Image</key>
+			<string>santa_monica_pier.png</string>
+			<key>Name</key>
+			<string>Santa Monica Pier</string>
+			<key>Website</key>
+			<string>http://santamonicapier.org/</string>
+		</dict>
+		<dict>
+			<key>Image</key>
+			<string>lacma.png</string>
+			<key>Name</key>
+			<string>LACMA</string>
+			<key>Website</key>
+			<string>http://www.lacma.org/</string>
+		</dict>
+		<dict>
+			<key>Image</key>
+			<string>la_live.png</string>
+			<key>Name</key>
+			<string>LA Live</string>
+			<key>Website</key>
+			<string>https://www.lalive.com/</string>
+		</dict>
+		<dict>
+			<key>Image</key>
+			<string>hollywood_sign.png</string>
+			<key>Name</key>
+			<string>Hollywood Sign</string>
+			<key>Website</key>
+			<string>http://hollywoodsign.org/</string>
+		</dict>
+		<dict>
+			<key>Image</key>
+			<string>griffith_observatory.png</string>
+			<key>Name</key>
+			<string>Griffith Observatory</string>
+			<key>Website</key>
+			<string>http://griffithobservatory.org/</string>
+		</dict>
+		<dict>
+			<key>Image</key>
+			<string>dodger_stadium.png</string>
+			<key>Name</key>
+			<string>Dogder Stadium</string>
+			<key>Website</key>
+			<string>http://losangeles.dodgers.mlb.com/index.jsp?c_id=la</string>
+		</dict>
+		<dict>
+			<key>Image</key>
+			<string>getty_villa.png</string>
+			<key>Name</key>
+			<string>Getty Villa</string>
+			<key>Website</key>
+			<string>http://www.getty.edu/visit/villa/</string>
+		</dict>
+		<dict>
+			<key>Image</key>
+			<string>getty.png</string>
+			<key>Name</key>
+			<string>Getty</string>
+			<key>Website</key>
+			<string>http://www.getty.edu/</string>
+		</dict>
+		<dict>
+			<key>Image</key>
+			<string>graumans_chinese_theatre.png</string>
+			<key>Name</key>
+			<string>Graumans Chinese Theatre</string>
+			<key>Website</key>
+			<string>http://www.tclchinesetheatres.com/</string>
+		</dict>
+		<dict>
+			<key>Image</key>
+			<string>disneyland.png</string>
+			<key>Name</key>
+			<string>Disneyland</string>
+			<key>Website</key>
+			<string>https://disneyland.disney.go.com/</string>
+		</dict>
+		<dict>
+			<key>Website</key>
+			<string>http://californiasciencecenter.org/</string>
+			<key>Image</key>
+			<string>california_science_center.png</string>
+			<key>Name</key>
+			<string>California Science Center</string>
+		</dict>
+	</array>
+</dict>
+</plist>

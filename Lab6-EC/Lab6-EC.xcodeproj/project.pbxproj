@@ -15,7 +15,10 @@
 		EDF710F61CD134F200AEF1FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF710F41CD134F200AEF1FC /* LaunchScreen.storyboard */; };
 		EDF711011CD134F200AEF1FC /* Lab6_ECTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF711001CD134F200AEF1FC /* Lab6_ECTests.m */; };
 		EDF7110C1CD134F200AEF1FC /* Lab6_ECUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF7110B1CD134F200AEF1FC /* Lab6_ECUITests.m */; };
-		EDF7111A1CD1360000AEF1FC /* placesPL.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDF711191CD1360000AEF1FC /* placesPL.plist */; };
+		EDF7111C1CD13A7200AEF1FC /* placesPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDF7111B1CD13A7200AEF1FC /* placesPropertyList.plist */; };
+		EDF7111F1CD1412E00AEF1FC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF7111E1CD1412E00AEF1FC /* DetailViewController.m */; };
+		EDF711221CD157C500AEF1FC /* PlacesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF711211CD157C500AEF1FC /* PlacesModel.m */; };
+		EDF711281CD15DD700AEF1FC /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF711271CD15DD700AEF1FC /* CollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +55,13 @@
 		EDF711071CD134F200AEF1FC /* Lab6-ECUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lab6-ECUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF7110B1CD134F200AEF1FC /* Lab6_ECUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lab6_ECUITests.m; sourceTree = "<group>"; };
 		EDF7110D1CD134F200AEF1FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDF711191CD1360000AEF1FC /* placesPL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = placesPL.plist; sourceTree = "<group>"; };
+		EDF7111B1CD13A7200AEF1FC /* placesPropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = placesPropertyList.plist; sourceTree = "<group>"; };
+		EDF7111D1CD1412E00AEF1FC /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		EDF7111E1CD1412E00AEF1FC /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		EDF711201CD157C500AEF1FC /* PlacesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlacesModel.h; sourceTree = "<group>"; };
+		EDF711211CD157C500AEF1FC /* PlacesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesModel.m; sourceTree = "<group>"; };
+		EDF711261CD15DD700AEF1FC /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		EDF711271CD15DD700AEF1FC /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,16 +112,10 @@
 		EDF710E51CD134F100AEF1FC /* Lab6-EC */ = {
 			isa = PBXGroup;
 			children = (
-				EDF710E91CD134F100AEF1FC /* AppDelegate.h */,
-				EDF710EA1CD134F100AEF1FC /* AppDelegate.m */,
-				EDF710EC1CD134F100AEF1FC /* ViewController.h */,
-				EDF710ED1CD134F100AEF1FC /* ViewController.m */,
-				EDF710EF1CD134F100AEF1FC /* Main.storyboard */,
-				EDF710F21CD134F200AEF1FC /* Assets.xcassets */,
-				EDF710F41CD134F200AEF1FC /* LaunchScreen.storyboard */,
-				EDF710F71CD134F200AEF1FC /* Info.plist */,
+				EDF711241CD157F100AEF1FC /* Controller */,
+				EDF711251CD1580300AEF1FC /* View */,
 				EDF710E61CD134F100AEF1FC /* Supporting Files */,
-				EDF711191CD1360000AEF1FC /* placesPL.plist */,
+				EDF711231CD157DB00AEF1FC /* Model */,
 			);
 			path = "Lab6-EC";
 			sourceTree = "<group>";
@@ -120,6 +123,10 @@
 		EDF710E61CD134F100AEF1FC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EDF710E91CD134F100AEF1FC /* AppDelegate.h */,
+				EDF710EA1CD134F100AEF1FC /* AppDelegate.m */,
+				EDF710F71CD134F200AEF1FC /* Info.plist */,
+				EDF7111B1CD13A7200AEF1FC /* placesPropertyList.plist */,
 				EDF710E71CD134F100AEF1FC /* main.m */,
 			);
 			name = "Supporting Files";
@@ -141,6 +148,38 @@
 				EDF7110D1CD134F200AEF1FC /* Info.plist */,
 			);
 			path = "Lab6-ECUITests";
+			sourceTree = "<group>";
+		};
+		EDF711231CD157DB00AEF1FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EDF711201CD157C500AEF1FC /* PlacesModel.h */,
+				EDF711211CD157C500AEF1FC /* PlacesModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EDF711241CD157F100AEF1FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EDF710EC1CD134F100AEF1FC /* ViewController.h */,
+				EDF710ED1CD134F100AEF1FC /* ViewController.m */,
+				EDF7111D1CD1412E00AEF1FC /* DetailViewController.h */,
+				EDF7111E1CD1412E00AEF1FC /* DetailViewController.m */,
+				EDF711261CD15DD700AEF1FC /* CollectionViewController.h */,
+				EDF711271CD15DD700AEF1FC /* CollectionViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		EDF711251CD1580300AEF1FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDF710F21CD134F200AEF1FC /* Assets.xcassets */,
+				EDF710EF1CD134F100AEF1FC /* Main.storyboard */,
+				EDF710F41CD134F200AEF1FC /* LaunchScreen.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,8 +285,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF7111A1CD1360000AEF1FC /* placesPL.plist in Resources */,
 				EDF710F61CD134F200AEF1FC /* LaunchScreen.storyboard in Resources */,
+				EDF7111C1CD13A7200AEF1FC /* placesPropertyList.plist in Resources */,
 				EDF710F31CD134F200AEF1FC /* Assets.xcassets in Resources */,
 				EDF710F11CD134F100AEF1FC /* Main.storyboard in Resources */,
 			);
@@ -274,9 +313,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDF711221CD157C500AEF1FC /* PlacesModel.m in Sources */,
 				EDF710EE1CD134F100AEF1FC /* ViewController.m in Sources */,
+				EDF711281CD15DD700AEF1FC /* CollectionViewController.m in Sources */,
 				EDF710EB1CD134F100AEF1FC /* AppDelegate.m in Sources */,
 				EDF710E81CD134F100AEF1FC /* main.m in Sources */,
+				EDF7111F1CD1412E00AEF1FC /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
