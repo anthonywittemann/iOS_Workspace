@@ -12,6 +12,7 @@ static NSString *const kFlashcardsPList = @"Flashcards.list";
 @interface FlashcardsModel()
 
 @property (strong, nonatomic) NSMutableArray *flashcards;
+@property (strong, nonatomic) NSMutableArray *favorites;
 @property (nonatomic) NSInteger currentIndex;
 @property (strong, nonatomic) NSString *filePath;
 
@@ -60,6 +61,8 @@ static NSString *const kFlashcardsPList = @"Flashcards.list";
             
             _currentIndex = 0;
         }
+        
+        _favorites = nil;
     }
     return self;
 }
@@ -67,6 +70,14 @@ static NSString *const kFlashcardsPList = @"Flashcards.list";
 -(NSUInteger) numberOfFlashcards{
 //    NSLog(@"the num of cards direct is: %li", (long)[self.flashcards count]);
     return [self.flashcards count];
+}
+
+-(NSUInteger) numberOfFavorites{
+    return [self.favorites count];
+}
+
+-(NSUInteger) getCurrentIndex{
+    return self.currentIndex;
 }
 
 - (NSDictionary *) currentFlashcard{
@@ -88,6 +99,14 @@ static NSString *const kFlashcardsPList = @"Flashcards.list";
     return self.flashcards[index];
 }
 
+- (NSDictionary *) favoriteAtIndex: (NSUInteger) index{
+    //check index
+    if(index >= self.favorites.count){
+        index = 0;
+    }
+    return self.favorites[index];
+}
+
 - (void) removeFlashcardAtIndex: (NSUInteger) index {
     // check index
     NSUInteger zero = 0;
@@ -100,10 +119,28 @@ static NSString *const kFlashcardsPList = @"Flashcards.list";
     [self save];
 }
 
+- (void) removeFavoriteAtIndex: (NSUInteger) index {
+    // check index
+    NSUInteger zero = 0;
+    
+    if(index >= self.favorites.count || index < zero){
+        return;
+    }
+    
+    [self.favorites removeObjectAtIndex: index];
+    [self save];
+}
+
 
 - (void) insertFlashcard:(NSDictionary *)flashcard {
 
     [self.flashcards addObject: flashcard];
+    [self save];
+}
+
+- (void) insertFavorite:(NSDictionary *)favoriteFlashcard {
+    
+    [self.favorites addObject: favoriteFlashcard];
     [self save];
 }
 
@@ -153,6 +190,8 @@ static NSString *const kFlashcardsPList = @"Flashcards.list";
     NSDictionary *prevFlash = self.flashcards[self.currentIndex];
     return prevFlash;
 }
+
+
 
 - (void) save {
     [self.flashcards writeToFile:self.filePath atomically:YES];

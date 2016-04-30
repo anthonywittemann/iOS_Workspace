@@ -22,6 +22,7 @@
 //IBOutlets
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *answerLabel;
+@property (weak, nonatomic) IBOutlet UIButton *starButton;
 
 
 @end
@@ -147,13 +148,13 @@
 
 
 - (void) singleTapRecognized: (UITapGestureRecognizer *) recognizer{
-//    self.questionLabel.text = flashcard[kQuestionKey];
     // Play sound
     AudioServicesPlaySystemSound(self.fadeInSoundFileID);
-//    [self fadeInQuestion:flashcard[kQuestionKey]];
     if([self.model numberOfFlashcards] > 0){
         NSDictionary *flashcard = [self.model randomFlashcard];
         [self fadeInQuestion:flashcard[kQuestionKey]];
+        
+        [self checkIfInFavorites:[self.model currentFlashcard]];
     }
     else {
         [self fadeInQuestion:@"There are no more flashcards."];
@@ -163,10 +164,11 @@
 - (void) swipeRightRecognized: (UISwipeGestureRecognizer *) recognizer{
     // Play sound
     AudioServicesPlaySystemSound(self.fadeInSoundFileID);
-//    [self fadeInQuestion:flashcard[kQuestionKey]];
     if([self.model numberOfFlashcards] > 0){
         NSDictionary *flashcard = [self.model prevFlashcard];
         [self fadeInQuestion:flashcard[kQuestionKey]];
+        
+        [self checkIfInFavorites:[self.model currentFlashcard]];
     }
     else {
         [self fadeInQuestion:@"There are no more flashcards."];
@@ -179,8 +181,10 @@
     AudioServicesPlaySystemSound(self.fadeInSoundFileID);
     if([self.model numberOfFlashcards] > 0){
         NSDictionary *flashcard = [self.model nextFlashcard];
-
+        
         [self fadeInQuestion:flashcard[kQuestionKey]];
+        
+        [self checkIfInFavorites:[self.model currentFlashcard]];
     }
     else {
         [self fadeInQuestion:@"There are no more flashcards."];
@@ -204,6 +208,37 @@
         }
         
     }];
+}
+
+- (IBAction)starButtonPressed:(id)sender {
+    [self checkIfInFavorites:[self.model currentFlashcard]];
+}
+
+- (void) checkIfInFavorites: (NSDictionary *) currentFlashcard{
+    BOOL isInFavorites = false;
+    //TODO loop and check if in favorites - NOT BY COMPARING OBJECTS - CREATE FAVORITES ARRAY TO COMPARE TO CURRENT FLASHCARDINDEX
+//    for(int i = 0; i < [self.model numberOfFlashcards]; i++){
+//        if(currentFlashcard == [self.model flashcardAtIndex:i]){
+//            isInFavorites = true;
+//            break;
+//        }
+//    }
+    
+    
+    if(isInFavorites){
+        //flashcard is removed from favorites
+        [self.model removeFavoriteAtIndex:[self.model getCurrentIndex]];
+        
+        //change the button to show it was removed from favorites
+        [self.starButton setImage:[UIImage imageNamed:@"star.png"] forState:UIControlStateNormal];
+    } else{
+        //flashcard is added as a favorite.
+        [self.model insertFavorite:currentFlashcard];
+        
+        //change the button to show it was added to favorites
+        [self.starButton setImage:[UIImage imageNamed:@"starFilled.png"] forState:UIControlStateNormal];
+    }
+    
 }
 
 @end

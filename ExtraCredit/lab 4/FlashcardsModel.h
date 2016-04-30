@@ -18,11 +18,16 @@ static NSString * const kAnswerKey = @"answer";
 + (instancetype) sharedModel;
 - (NSDictionary *) randomFlashcard;
 - (NSDictionary *) currentFlashcard;
+- (NSUInteger) getCurrentIndex;
 - (NSUInteger) numberOfFlashcards;
+- (NSUInteger) numberOfFavorites;
 - (NSDictionary *) flashcardAtIndex: (NSUInteger) index;
+- (NSDictionary *) favoriteAtIndex: (NSUInteger) index;
 - (void) removeFlashcardAtIndex: (NSUInteger) index;
+- (void) removeFavoriteAtIndex: (NSUInteger) index;
 
 - (void) insertFlashcard: (NSDictionary *) flashcard;
+- (void) insertFavorite:(NSDictionary *)favoriteFlashcard;
 
 - (void) insertFlashcard: (NSString *) question
                   answer: (NSString *) answer;

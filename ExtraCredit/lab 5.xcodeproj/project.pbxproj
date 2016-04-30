@@ -22,6 +22,7 @@
 		2A4FA8ED1CA0CF910017BC4B /* fadein.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2A4FA8EB1CA0CF910017BC4B /* fadein.wav */; };
 		2A4FA8EE1CA0CF910017BC4B /* tone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A4FA8EC1CA0CF910017BC4B /* tone.mp3 */; };
 		2AA0B3C21C9A4ACE00DCAD20 /* FlashcardsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA0B3C11C9A4ACE00DCAD20 /* FlashcardsModel.m */; };
+		EDF7112B1CD3039300AEF1FC /* FavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF7112A1CD3039300AEF1FC /* FavoritesTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		2A4FA8EC1CA0CF910017BC4B /* tone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tone.mp3; sourceTree = "<group>"; };
 		2AA0B3C01C9A4ACE00DCAD20 /* FlashcardsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashcardsModel.h; sourceTree = "<group>"; };
 		2AA0B3C11C9A4ACE00DCAD20 /* FlashcardsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashcardsModel.m; sourceTree = "<group>"; };
+		EDF711291CD3039300AEF1FC /* FavoritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesTableViewController.h; sourceTree = "<group>"; };
+		EDF7112A1CD3039300AEF1FC /* FavoritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +199,8 @@
 				2A4B600D1CAF10AB00C410DF /* TableViewController.m */,
 				2A4B600F1CAF8B9D00C410DF /* AddViewController.h */,
 				2A4B60101CAF8B9D00C410DF /* AddViewController.m */,
+				EDF711291CD3039300AEF1FC /* FavoritesTableViewController.h */,
+				EDF7112A1CD3039300AEF1FC /* FavoritesTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				2A361AE31C9791A90092FF4E /* ViewController.m in Sources */,
 				2A4B60111CAF8B9D00C410DF /* AddViewController.m in Sources */,
 				2A361AE01C9791A90092FF4E /* AppDelegate.m in Sources */,
+				EDF7112B1CD3039300AEF1FC /* FavoritesTableViewController.m in Sources */,
 				2A4B600E1CAF10AB00C410DF /* TableViewController.m in Sources */,
 				2A361ADD1C9791A90092FF4E /* main.m in Sources */,
 			);
