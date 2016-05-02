@@ -26,11 +26,14 @@
 
 //transactionMemo - NSString
 
+//isSeller - BOOL
 
-@property NSString* tranactionMemo;
+
+@property (nonatomic) NSString* tranactionMemo;
 @property BOOL timeIsAgreedUpon;
 @property BOOL locationIsAgreedUpon;
 @property BOOL dollarAmountIsAgreedUpon;
+@property BOOL isSeller; //TODO set to true and implement just the seller side first
 
 
 

@@ -16,6 +16,8 @@
 		ED4B7B8F1CD7E9DC00D859F0 /* FinalProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4B7B8E1CD7E9DC00D859F0 /* FinalProjectTests.m */; };
 		ED4B7B9A1CD7E9DC00D859F0 /* FinalProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4B7B991CD7E9DC00D859F0 /* FinalProjectUITests.m */; };
 		ED4B7BAC1CD7EA9B00D859F0 /* TransactionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4B7BAB1CD7EA9B00D859F0 /* TransactionModel.m */; };
+		ED4B7BB21CD808C500D859F0 /* LocationSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4B7BB11CD808C500D859F0 /* LocationSelectorViewController.m */; };
+		ED4B7BB41CD80D3F00D859F0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = ED4B7BB31CD80D3F00D859F0 /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,9 @@
 		ED4B7B9B1CD7E9DC00D859F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED4B7BAA1CD7EA9B00D859F0 /* TransactionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionModel.h; sourceTree = "<group>"; };
 		ED4B7BAB1CD7EA9B00D859F0 /* TransactionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionModel.m; sourceTree = "<group>"; };
+		ED4B7BB01CD808C500D859F0 /* LocationSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationSelectorViewController.h; path = ../LocationSelectorViewController.h; sourceTree = "<group>"; };
+		ED4B7BB11CD808C500D859F0 /* LocationSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationSelectorViewController.m; path = ../LocationSelectorViewController.m; sourceTree = "<group>"; };
+		ED4B7BB31CD80D3F00D859F0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +113,7 @@
 				ED4B7BA81CD7E9ED00D859F0 /* View */,
 				ED4B7BA71CD7E9E500D859F0 /* Controller */,
 				ED4B7B741CD7E9DB00D859F0 /* Supporting Files */,
+				ED4B7BB31CD80D3F00D859F0 /* Podfile */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -146,6 +152,8 @@
 			children = (
 				ED4B7B7A1CD7E9DB00D859F0 /* ViewController.h */,
 				ED4B7B7B1CD7E9DB00D859F0 /* ViewController.m */,
+				ED4B7BB01CD808C500D859F0 /* LocationSelectorViewController.h */,
+				ED4B7BB11CD808C500D859F0 /* LocationSelectorViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -274,6 +282,7 @@
 			files = (
 				ED4B7B841CD7E9DB00D859F0 /* LaunchScreen.storyboard in Resources */,
 				ED4B7B811CD7E9DB00D859F0 /* Assets.xcassets in Resources */,
+				ED4B7BB41CD80D3F00D859F0 /* Podfile in Resources */,
 				ED4B7B7F1CD7E9DB00D859F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED4B7BB21CD808C500D859F0 /* LocationSelectorViewController.m in Sources */,
 				ED4B7BAC1CD7EA9B00D859F0 /* TransactionModel.m in Sources */,
 				ED4B7B7C1CD7E9DB00D859F0 /* ViewController.m in Sources */,
 				ED4B7B791CD7E9DB00D859F0 /* AppDelegate.m in Sources */,
