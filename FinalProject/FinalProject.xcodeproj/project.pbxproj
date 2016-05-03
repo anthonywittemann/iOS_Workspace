@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5FE6E5709613E52DC1B75F7C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88441C959AE97EA16F715528 /* libPods.a */; };
+		ED15DF741CD8A9760034BC32 /* DateSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED15DF731CD8A9760034BC32 /* DateSelectorViewController.m */; };
 		ED4B7B761CD7E9DB00D859F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4B7B751CD7E9DB00D859F0 /* main.m */; };
 		ED4B7B791CD7E9DB00D859F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4B7B781CD7E9DB00D859F0 /* AppDelegate.m */; };
 		ED4B7B7C1CD7E9DB00D859F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4B7B7B1CD7E9DB00D859F0 /* ViewController.m */; };
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		4C08DB104108D1FD0012B079 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		88441C959AE97EA16F715528 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED15DF721CD8A9760034BC32 /* DateSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateSelectorViewController.h; sourceTree = "<group>"; };
+		ED15DF731CD8A9760034BC32 /* DateSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateSelectorViewController.m; sourceTree = "<group>"; };
 		ED4B7B711CD7E9DB00D859F0 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4B7B751CD7E9DB00D859F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ED4B7B771CD7E9DB00D859F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 				ED4B7B7B1CD7E9DB00D859F0 /* ViewController.m */,
 				ED4B7BB01CD808C500D859F0 /* LocationSelectorViewController.h */,
 				ED4B7BB11CD808C500D859F0 /* LocationSelectorViewController.m */,
+				ED15DF721CD8A9760034BC32 /* DateSelectorViewController.h */,
+				ED15DF731CD8A9760034BC32 /* DateSelectorViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -380,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED4B7BB21CD808C500D859F0 /* LocationSelectorViewController.m in Sources */,
+				ED15DF741CD8A9760034BC32 /* DateSelectorViewController.m in Sources */,
 				ED4B7BAC1CD7EA9B00D859F0 /* TransactionModel.m in Sources */,
 				ED4B7B7C1CD7E9DB00D859F0 /* ViewController.m in Sources */,
 				ED4B7B791CD7E9DB00D859F0 /* AppDelegate.m in Sources */,

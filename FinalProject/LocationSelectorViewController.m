@@ -7,12 +7,14 @@
 //
 
 #import "LocationSelectorViewController.h"
+#import "TransactionModel.h"
 @import GoogleMaps;
 
 @interface LocationSelectorViewController ()
 // Instantiate a pair of UILabels in Interface Builder
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (strong,nonatomic) TransactionModel *model;
 @end
 
 @implementation LocationSelectorViewController
@@ -24,6 +26,8 @@ GMSPlacePicker *_placePicker;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.model = [TransactionModel sharedModel];
     // Do any additional setup after loading the view.
 //    
 //    // Create a GMSCameraPosition that tells the map to display the

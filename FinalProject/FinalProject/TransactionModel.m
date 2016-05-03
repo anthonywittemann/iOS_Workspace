@@ -16,9 +16,9 @@
 //sellerCurrentLocation - TODO - location from coreLocation or GoogleMaps
 //locationIsAgreedUpon - BOOL
 
-//agreedUponDateAndTime - TODO - NSTime?
-//buyerDateAndTime - TODO - NSTime?
-//sellerDateAndTime - TODO - NSTime?
+//agreedUponDateAndTime - TODO - NSString
+//buyerDateAndTime - TODO - NSString
+//sellerDateAndTime - TODO - NSString
 //timeIsAgreedUpon - BOOL
 
 //dollarAmountIsAgreedUpon - BOOL
@@ -33,7 +33,12 @@
 @property BOOL timeIsAgreedUpon;
 @property BOOL locationIsAgreedUpon;
 @property BOOL dollarAmountIsAgreedUpon;
-@property BOOL isSeller; //TODO set to true and implement just the seller side first
+@property (nonatomic) BOOL isSeller; //TODO LONG generate login key so no need to ask
+
+@property (nonatomic) NSString* buyerDateAndTime;
+@property (nonatomic) NSString* sellerDateAndTime;
+@property (nonatomic) NSString* agreedUponDateAndTime;
+
 
 
 
@@ -41,15 +46,50 @@
 
 @implementation TransactionModel
 
++(instancetype) sharedModel{
+    static TransactionModel *_sharedModel = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        // code to be executed once - thread safe version
+        _sharedModel = [[self alloc] init];
+    });
+    return _sharedModel;
+}
+
 //getters
 - (NSString *) tranactionMemo{
     return _tranactionMemo;
+}
+-(NSString *) getSellerDateAndTime{
+    return _sellerDateAndTime;
+}
+-(NSString *) getBuyerDateAndTime{
+    return _buyerDateAndTime;
+}
+-(NSString *) getAgreedUponDateAndTime{
+    return _agreedUponDateAndTime;
+}
+-(BOOL) isIsSeller{
+    return _isSeller;
 }
 
 
 //setters
 - (void) setTransactionMemo: (NSString *) newTransactionMemo{
     _tranactionMemo = newTransactionMemo;
+}
+-(void) setSellerDateAndTime:(NSString *)sellerDateAndTime{
+    _sellerDateAndTime = sellerDateAndTime;
+}
+-(void) setBuyerDateAndTime:(NSString *)buyerDateAndTime{
+    _buyerDateAndTime = buyerDateAndTime;
+}
+-(void) setAgreedUponDateAndTime:(NSString *)agreedUponDateAndTime{
+    _agreedUponDateAndTime = agreedUponDateAndTime;
+}
+-(void) setIsSeller: (BOOL) seller{
+    _isSeller = seller;
 }
 
 @end
