@@ -1,5 +1,5 @@
 //
-//  MoneyViewController.h
+//  ReviewViewController.h
 //  FinalProject
 //
 //  Created by Anthony Wittemann on 5/3/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MoneyViewController : UIViewController
-
--(void) updateAmount:(double) rawAmount;
+@interface ReviewViewController : UIViewController
 
 @end

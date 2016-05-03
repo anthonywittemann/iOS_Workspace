@@ -10,6 +10,7 @@
 		5FE6E5709613E52DC1B75F7C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88441C959AE97EA16F715528 /* libPods.a */; };
 		ED15DF741CD8A9760034BC32 /* DateSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED15DF731CD8A9760034BC32 /* DateSelectorViewController.m */; };
 		ED15DF771CD929F70034BC32 /* MoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED15DF761CD929F70034BC32 /* MoneyViewController.m */; };
+		ED15DF7A1CD93B650034BC32 /* ReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED15DF791CD93B650034BC32 /* ReviewViewController.m */; };
 		ED4B7B761CD7E9DB00D859F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4B7B751CD7E9DB00D859F0 /* main.m */; };
 		ED4B7B791CD7E9DB00D859F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4B7B781CD7E9DB00D859F0 /* AppDelegate.m */; };
 		ED4B7B7C1CD7E9DB00D859F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4B7B7B1CD7E9DB00D859F0 /* ViewController.m */; };
@@ -46,6 +47,8 @@
 		ED15DF731CD8A9760034BC32 /* DateSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateSelectorViewController.m; sourceTree = "<group>"; };
 		ED15DF751CD929F70034BC32 /* MoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyViewController.h; sourceTree = "<group>"; };
 		ED15DF761CD929F70034BC32 /* MoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyViewController.m; sourceTree = "<group>"; };
+		ED15DF781CD93B650034BC32 /* ReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewViewController.h; sourceTree = "<group>"; };
+		ED15DF791CD93B650034BC32 /* ReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewViewController.m; sourceTree = "<group>"; };
 		ED4B7B711CD7E9DB00D859F0 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4B7B751CD7E9DB00D859F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ED4B7B771CD7E9DB00D859F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -184,6 +187,8 @@
 				ED15DF731CD8A9760034BC32 /* DateSelectorViewController.m */,
 				ED15DF751CD929F70034BC32 /* MoneyViewController.h */,
 				ED15DF761CD929F70034BC32 /* MoneyViewController.m */,
+				ED15DF781CD93B650034BC32 /* ReviewViewController.h */,
+				ED15DF791CD93B650034BC32 /* ReviewViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 			files = (
 				ED4B7BB21CD808C500D859F0 /* LocationSelectorViewController.m in Sources */,
 				ED15DF741CD8A9760034BC32 /* DateSelectorViewController.m in Sources */,
+				ED15DF7A1CD93B650034BC32 /* ReviewViewController.m in Sources */,
 				ED4B7BAC1CD7EA9B00D859F0 /* TransactionModel.m in Sources */,
 				ED4B7B7C1CD7E9DB00D859F0 /* ViewController.m in Sources */,
 				ED15DF771CD929F70034BC32 /* MoneyViewController.m in Sources */,

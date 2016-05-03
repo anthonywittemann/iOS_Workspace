@@ -40,8 +40,13 @@
 @property (nonatomic) NSString* sellerDateAndTime;
 @property (nonatomic) NSString* agreedUponDateAndTime;
 
-@property (nonatomic) NSString* tranactionMemo;
-@property (nonatomic) double transactionAmount;
+@property (nonatomic) NSString* transactionMemo; //TODO LONG handle cases where there is both a buyer and sell
+@property (nonatomic) NSString* transactionAmount;
+
+@property (nonatomic) NSString* locationName; //TODO LONG handle cases where there is both a buyer and sell
+@property (nonatomic) NSString* locationAddress;
+@property (nonatomic) NSString* currentLocationName; //TODO LONG handle cases where there is both a buyer and sell
+@property (nonatomic) NSString* currentLocationAddress;
 
 
 
@@ -77,11 +82,25 @@
     return _isSeller;
 }
 
-- (NSString *) tranactionMemo{
-    return _tranactionMemo;
+- (NSString *) getTransactionMemo{
+    return _transactionMemo;
 }
--(double) getTransactionAmount{
+-(NSString *) getTransactionAmount{
     return _transactionAmount;
+}
+
+-(NSString *) getLocationName{
+    return _locationName;
+}
+-(NSString *) getLocationAddress{
+    return _locationAddress;
+}
+
+-(NSString *) getCurrentLocationName{
+    return _currentLocationName;
+}
+-(NSString *) getCurrentLocationAddress{
+    return _currentLocationAddress;
 }
 
 
@@ -102,10 +121,23 @@
 }
 
 - (void) setTransactionMemo: (NSString *) newTransactionMemo{
-    _tranactionMemo = newTransactionMemo;
+    _transactionMemo = newTransactionMemo;
 }
--(void) setTransactionAmount:(double)transactionAmount{
-    self.transactionAmount = transactionAmount;
+-(void) setTransactionAmount:(NSString *) transactionAmnt{
+    self.transactionAmount = transactionAmnt;
+}
+
+-(void) setLocationName:(NSString *) newLocationName{
+    _locationName = newLocationName;
+}
+-(void) setLocationAddress:(NSString *) newLocationAddress{
+    _locationAddress = newLocationAddress;
+}
+-(void) setCurrentLocationName:(NSString *) newCurrentLocationName{
+    _locationName = newCurrentLocationName;
+}
+-(void) setCurrentLocationAddress:(NSString *) newCurrentLocationAddress{
+    _locationAddress = newCurrentLocationAddress;
 }
 
 @end

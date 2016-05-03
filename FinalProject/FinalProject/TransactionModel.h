@@ -13,12 +13,16 @@
 +(instancetype) sharedModel;
 
 //getters
-- (NSString *) tranactionMemo;
+- (NSString *) getTransactionMemo;
 -(NSString *) getSellerDateAndTime;
 -(NSString *) getBuyerDateAndTime;
 -(NSString *) getAgreedUponDateAndTime;
 -(BOOL) isIsSeller;
--(double) getTransactionAmount;
+-(NSString *) getTransactionAmount;
+-(NSString *) getLocationName;
+-(NSString *) getLocationAddress;
+-(NSString *) getCurrentLocationName;
+-(NSString *) getCurrentLocationAddress;
 
 //setters
 - (void) setTransactionMemo: (NSString *) newTransactionMemo;
@@ -26,7 +30,11 @@
 -(void) setBuyerDateAndTime:(NSString *)buyerDateAndTime;
 -(void) setAgreedUponDateAndTime:(NSString *)agreedUponDateAndTime;
 -(void) setIsSeller: (BOOL) seller;
--(void) setTransactionAmount:(double)transactionAmount;
+-(void) setTransactionAmount:(NSString *)transactionAmount;
+-(void) setLocationName:(NSString *) newLocationName;
+-(void) setLocationAddress:(NSString *) newLocationAddress;
+-(void) setCurrentLocationName:(NSString *) newCurrentLocationName;
+-(void) setCurrentLocationAddress:(NSString *) newCurrentLocationAddress;
 
 
 @end

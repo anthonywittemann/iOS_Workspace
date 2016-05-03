@@ -10,9 +10,10 @@
 #import "TransactionModel.h"
 
 @interface MoneyViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *moneyAmountTF;
 @property (weak, nonatomic) IBOutlet UITextView *transactionMemoTV;
 @property (weak, nonatomic) IBOutlet UILabel *moneyAmountLabel;
+@property (weak, nonatomic) IBOutlet UIButton *reviewButton;
+@property (weak, nonatomic) IBOutlet UITextField *moneyAmountTF;
 @property (strong,nonatomic) TransactionModel *model;
 
 @end
@@ -29,28 +30,46 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)reviewButtonClicked:(id)sender {
+    //[self updateAmount:self.moneyAmountTF.text.doubleValue]; TODO - UNCOMMENT when fixed problem with TF
+    [self.model setTransactionMemo:self.transactionMemoTV.text];
+}
 
 //TODO LONG - this is a fucking mess
-- (void)textFieldDidEndEditing:(UITextField *)textField{
+
+- (IBAction)moneyAmountTFEditingDidEnd:(id)sender {
+    [self updateAmount:self.moneyAmountTF.text.doubleValue];
+}
+
+- (IBAction) backgroundTouched:(id)sender {
+    [self.moneyAmountTF resignFirstResponder];
+    [self updateAmount:self.moneyAmountTF.text.doubleValue];
+}
+
+-(IBAction)dismissKeyboard:(id)sender{
+    [sender resignFirstResponder];
+    [self updateAmount:self.moneyAmountTF.text.doubleValue];
+}
+
+//TODO - HAVING PROBLEMS DISMISSING KEYBOARD AND UPDATING VALUE
+-(void) updateAmount:(double) rawAmount{
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [numberFormatter setUsesGroupingSeparator:NO];
     [numberFormatter setMaximumFractionDigits:2];
     [numberFormatter setMinimumFractionDigits:0];
     [numberFormatter setRoundingMode: NSNumberFormatterRoundUp];
-    double rawAmount = [_moneyAmountTF.text doubleValue];
     
     //update model
-    [self.model setTransactionAmount:rawAmount];
-     
+    [self.model setTransactionAmount:[numberFormatter stringFromNumber:[NSNumber numberWithFloat:rawAmount]]];
+    
     //update label
-    self.moneyAmountLabel.text = [NSString stringWithFormat:@"%.2f",rawAmount];
+    self.moneyAmountLabel.text = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:rawAmount]];
 }
 
-// This method enables or disables the processing of return key
--(BOOL) textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
-    return YES;
+
+- (void)textViewDidEndEditing:(UITextView *)textView{
+    [self.model setTransactionMemo:textView.text];
 }
 
 /*

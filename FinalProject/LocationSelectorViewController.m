@@ -12,8 +12,15 @@
 
 @interface LocationSelectorViewController ()
 // Instantiate a pair of UILabels in Interface Builder
+//needed for google maps API
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+
+//for UI not on google maps
+@property (weak, nonatomic) IBOutlet UILabel *locationNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationAddressLabel;
+
+
 @property (strong,nonatomic) TransactionModel *model;
 @end
 
@@ -47,6 +54,8 @@ GMSPlacePicker *_placePicker;
 //    marker.map = mapView_;
     
     _placesClient = [[GMSPlacesClient alloc] init];
+    self.locationNameLabel.text = self.model.getLocationName;
+    self.locationAddressLabel.text = self.model.getLocationAddress;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -105,6 +114,12 @@ GMSPlacePicker *_placePicker;
             self.nameLabel.text = @"No place selected";
             self.addressLabel.text = @"";
         }
+        
+        [self.model setLocationName:self.nameLabel.text];
+        [self.model setLocationAddress:self.addressLabel.text];
+        self.locationNameLabel.text = self.nameLabel.text;
+        self.locationAddressLabel.text = self.addressLabel.text;
+        NSLog(@"GOOOOOT HEREEEEE!!!");
     }];
 }
 
