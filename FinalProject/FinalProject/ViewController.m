@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <Firebase/Firebase.h>
 
 @interface ViewController ()
 
@@ -23,5 +24,24 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+/*
+ TODO - figure out where to put this writing data
+ 
+ // Create a reference to a Firebase database URL
+ Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://radiant-torch-5845.firebaseIO.com"];
+ // Write data to Firebase
+ [myRootRef setValue:@"Do you have data? You'll love Firebase."];
+ 
+ 
+ 
+ TODO - figure out where to put this reading data
+ 
+ // Read data and react to changes
+ [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+ NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
+ }];
+ 
+ */
 
 @end
