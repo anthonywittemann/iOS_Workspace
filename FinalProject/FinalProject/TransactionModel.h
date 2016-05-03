@@ -13,6 +13,7 @@
 +(instancetype) sharedModel;
 
 //getters
+-(Firebase *) getFirebaseRef;
 - (NSString *) getTransactionMemo;
 -(NSString *) getSellerDateAndTime;
 -(NSString *) getBuyerDateAndTime;

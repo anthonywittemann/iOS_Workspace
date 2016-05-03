@@ -8,6 +8,7 @@
 
 #import "LocationSelectorViewController.h"
 #import "TransactionModel.h"
+#import <Firebase/Firebase.h>
 @import GoogleMaps;
 
 @interface LocationSelectorViewController ()
@@ -39,7 +40,6 @@ GMSPlacePicker *_placePicker;
     [super viewDidLoad];
     
     self.model = [TransactionModel sharedModel];
-    // Do any additional setup after loading the view.
     
     _placesClient = [[GMSPlacesClient alloc] init];
     self.locationNameLabel.text = self.model.getLocationName;

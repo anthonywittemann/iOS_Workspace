@@ -7,6 +7,7 @@
 //
 
 #import "TransactionModel.h"
+#import <Firebase/Firebase.h>
 
 @interface TransactionModel ()
 
@@ -49,6 +50,9 @@
 @property (nonatomic) NSString* currentLocationAddress;
 
 
+@property (nonatomic) Firebase *transactionElementsRef;
+
+
 
 
 @end
@@ -66,7 +70,48 @@
     return _sharedModel;
 }
 
+- (instancetype) init{ //TODO!!!!!!!!
+    self = [super init];
+    if (self) {
+        // Create a reference to a Firebase database URL
+        Firebase* myRootRef = [[Firebase alloc] initWithUrl:@"https://radiant-torch-5845.firebaseIO.com"];
+        _transactionElementsRef = [myRootRef childByAppendingPath: @"transactionElements"];
+        
+        // Read data and react to changes
+        [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+            NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
+        }];
+        
+        //TODO - if database is empty, write default data to it - replace with my NSDictionaries with transaction data
+        /*
+         NSDictionary *alanisawesome = @{
+            @"full_name" : @"Alan Turing",
+            @"date_of_birth": @"June 23, 1912"
+         };
+         NSDictionary *gracehop = @{
+            @"full_name" : @"Grace Hopper",
+            @"date_of_birth": @"December 9, 1906"
+         };
+         
+         NSDictionary *transactionElements = @{
+            @"alanisawesome": alanisawesome,
+            @"gracehop": gracehop
+         };
+         [transactionElementsRef setValue: transactionElements];
+         */
+        
+        //    // Write data to Firebase - TODO WHERE TO PUT THIS??
+        //    [myRootRef setValue:@"Do you have data? You'll love Firebase."];
+        
+        
+    }
+    return self;
+}
+
 //getters
+-(Firebase *) getFirebaseRef{
+    return _transactionElementsRef;
+}
 
 -(NSString *) getSellerDateAndTime{
     return _sellerDateAndTime;
@@ -104,7 +149,7 @@
 }
 
 
-//setters
+//setters - also update Firebase
 
 -(void) setSellerDateAndTime:(NSString *)sellerDateAndTime{
     _sellerDateAndTime = sellerDateAndTime;
