@@ -113,33 +113,62 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location Name: (no location Selected)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nh4-td-KTM">
-                                <rect key="frame" x="158" y="190" width="284" height="36"/>
+                                <rect key="frame" x="158" y="171" width="284" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location Address: (no location Selected)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPA-9q-b4x">
-                                <rect key="frame" x="147" y="263" width="306" height="36"/>
+                                <rect key="frame" x="147" y="215" width="306" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Current Location Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHu-fs-pbD">
+                                <rect key="frame" x="158" y="336" width="284" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Current Location Address:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqe-9L-XG8">
+                                <rect key="frame" x="147" y="380" width="306" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ug9-0u-4jN">
+                                <rect key="frame" x="182" y="291" width="236" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Get Current Locaiton"/>
+                                <connections>
+                                    <action selector="getCurrentPlace:" destination="UUO-lH-dKt" eventType="touchUpInside" id="wxn-Ru-pB8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VPA-9q-b4x" firstAttribute="top" secondItem="nh4-td-KTM" secondAttribute="bottom" constant="50" id="8fr-tb-phN"/>
+                            <constraint firstItem="VPA-9q-b4x" firstAttribute="top" secondItem="nh4-td-KTM" secondAttribute="bottom" constant="20" id="8fr-tb-phN"/>
                             <constraint firstItem="9Qu-BX-jeC" firstAttribute="top" secondItem="e3m-ey-stz" secondAttribute="bottom" constant="102" id="CzX-tc-ql4"/>
+                            <constraint firstItem="Mqe-9L-XG8" firstAttribute="centerX" secondItem="TLQ-5G-LkA" secondAttribute="centerX" id="Hfl-HY-Hi1"/>
+                            <constraint firstItem="Ug9-0u-4jN" firstAttribute="centerX" secondItem="TLQ-5G-LkA" secondAttribute="centerX" id="MWI-hl-Hjv"/>
                             <constraint firstItem="P3V-jE-Mpo" firstAttribute="top" secondItem="9Qu-BX-jeC" secondAttribute="bottom" constant="341" id="Ogh-zc-llc"/>
+                            <constraint firstItem="FHu-fs-pbD" firstAttribute="centerX" secondItem="TLQ-5G-LkA" secondAttribute="centerX" id="RM2-iG-rRv"/>
                             <constraint firstItem="P3V-jE-Mpo" firstAttribute="centerX" secondItem="TLQ-5G-LkA" secondAttribute="centerX" id="TS5-BW-6Hm"/>
+                            <constraint firstItem="Ug9-0u-4jN" firstAttribute="top" secondItem="VPA-9q-b4x" secondAttribute="bottom" constant="40" id="X0F-v2-NK9"/>
+                            <constraint firstItem="Mqe-9L-XG8" firstAttribute="top" secondItem="FHu-fs-pbD" secondAttribute="bottom" constant="20" id="Zei-Ea-YIg"/>
                             <constraint firstItem="rpl-Kd-OaT" firstAttribute="centerX" secondItem="TLQ-5G-LkA" secondAttribute="centerX" id="hP5-nY-fWD"/>
                             <constraint firstItem="VPA-9q-b4x" firstAttribute="centerX" secondItem="TLQ-5G-LkA" secondAttribute="centerX" id="iuU-hp-pwo"/>
-                            <constraint firstItem="nh4-td-KTM" firstAttribute="top" secondItem="9Qu-BX-jeC" secondAttribute="bottom" constant="50" id="lSE-eN-hr0"/>
+                            <constraint firstItem="nh4-td-KTM" firstAttribute="top" secondItem="9Qu-BX-jeC" secondAttribute="bottom" constant="20" id="lSE-eN-hr0"/>
                             <constraint firstItem="9Qu-BX-jeC" firstAttribute="centerX" secondItem="TLQ-5G-LkA" secondAttribute="centerX" id="mzJ-BO-xVf"/>
+                            <constraint firstItem="FHu-fs-pbD" firstAttribute="top" secondItem="Ug9-0u-4jN" secondAttribute="bottom" constant="15" id="t46-5Y-rzn"/>
                             <constraint firstItem="nh4-td-KTM" firstAttribute="centerX" secondItem="TLQ-5G-LkA" secondAttribute="centerX" id="wYs-R5-rgx"/>
                             <constraint firstItem="rpl-Kd-OaT" firstAttribute="top" secondItem="e3m-ey-stz" secondAttribute="bottom" constant="8" id="x1h-cJ-f9B"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="currentLocAddressLabel" destination="Mqe-9L-XG8" id="eI2-LK-SCY"/>
+                        <outlet property="currentLocNameLabel" destination="FHu-fs-pbD" id="mI2-PB-Jxp"/>
                         <outlet property="locationAddressLabel" destination="VPA-9q-b4x" id="cl5-Vk-2sK"/>
                         <outlet property="locationNameLabel" destination="nh4-td-KTM" id="MWd-6U-qb1"/>
                     </connections>
@@ -497,8 +526,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oii-ey-FMh"/>
+        <segue reference="sZ7-3k-woM"/>
+        <segue reference="99h-u9-5p3"/>
         <segue reference="Z8D-40-Ml0"/>
-        <segue reference="Bpl-gp-8RF"/>
     </inferredMetricsTieBreakers>
 </document>
