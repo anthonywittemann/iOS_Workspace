@@ -210,10 +210,10 @@
             </objects>
             <point key="canvasLocation" x="1621" y="320"/>
         </scene>
-        <!--View Controller-->
+        <!--Money View Controller-->
         <scene sceneID="eLy-qU-v5N">
             <objects>
-                <viewController id="eAP-ev-kkC" sceneMemberID="viewController">
+                <viewController id="eAP-ev-kkC" customClass="MoneyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QMB-Op-d9s"/>
                         <viewControllerLayoutGuide type="bottom" id="zOT-fq-26k"/>
@@ -233,7 +233,7 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ to be paid" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="duf-NC-iSD">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ to be paid" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="duf-NC-iSD">
                                 <rect key="frame" x="252" y="110" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
@@ -249,7 +249,7 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Transaction Memo" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7f3-5L-Gzz">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Transaction Memo" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7f3-5L-Gzz">
                                 <rect key="frame" x="192" y="236" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -267,11 +267,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIQ-J2-qeq">
+                                <rect key="frame" x="265" y="160" width="70" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="duf-NC-iSD" firstAttribute="centerX" secondItem="uLd-tx-ZK5" secondAttribute="centerX" id="2jN-uD-Nlh"/>
                             <constraint firstItem="i8e-NS-Rmf" firstAttribute="leading" secondItem="uLd-tx-ZK5" secondAttribute="leadingMargin" id="5GH-Wh-YtR"/>
+                            <constraint firstItem="7f3-5L-Gzz" firstAttribute="top" secondItem="EIQ-J2-qeq" secondAttribute="bottom" constant="40" id="JR7-Qh-CUq"/>
                             <constraint firstItem="i8e-NS-Rmf" firstAttribute="top" secondItem="QMB-Op-d9s" secondAttribute="bottom" id="P7C-HV-O4f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7f3-5L-Gzz" secondAttribute="trailing" constant="148" id="Qi0-mc-hHf"/>
                             <constraint firstItem="7f3-5L-Gzz" firstAttribute="centerX" secondItem="uLd-tx-ZK5" secondAttribute="centerX" constant="12" id="R8i-Qd-spC"/>
@@ -279,13 +286,19 @@
                             <constraint firstItem="i8e-NS-Rmf" firstAttribute="top" secondItem="QMB-Op-d9s" secondAttribute="bottom" id="Xhk-VL-Nc2"/>
                             <constraint firstItem="duf-NC-iSD" firstAttribute="top" secondItem="QMB-Op-d9s" secondAttribute="bottom" constant="90" id="Yjj-T9-iA1"/>
                             <constraint firstItem="o7z-CX-ura" firstAttribute="top" secondItem="7f3-5L-Gzz" secondAttribute="bottom" constant="51" id="bkU-WH-JGe"/>
-                            <constraint firstItem="7f3-5L-Gzz" firstAttribute="top" secondItem="duf-NC-iSD" secondAttribute="bottom" constant="96" id="cEt-UG-uMD"/>
+                            <constraint firstItem="EIQ-J2-qeq" firstAttribute="centerX" secondItem="uLd-tx-ZK5" secondAttribute="centerX" id="de1-7c-xkC"/>
+                            <constraint firstItem="EIQ-J2-qeq" firstAttribute="top" secondItem="duf-NC-iSD" secondAttribute="bottom" constant="20" id="gxJ-DW-Ryf"/>
                             <constraint firstItem="o7z-CX-ura" firstAttribute="centerX" secondItem="uLd-tx-ZK5" secondAttribute="centerX" id="jCi-du-k3s"/>
                             <constraint firstItem="i8e-NS-Rmf" firstAttribute="leading" secondItem="uLd-tx-ZK5" secondAttribute="leadingMargin" id="kkU-Pa-kVT"/>
                             <constraint firstItem="Rnn-IC-T7r" firstAttribute="centerX" secondItem="uLd-tx-ZK5" secondAttribute="centerX" id="o5d-Sq-D5M"/>
                             <constraint firstItem="7f3-5L-Gzz" firstAttribute="leading" secondItem="uLd-tx-ZK5" secondAttribute="leadingMargin" constant="172" id="wrH-qz-lDe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="moneyAmountLabel" destination="EIQ-J2-qeq" id="crR-D4-Qw0"/>
+                        <outlet property="moneyAmountTF" destination="duf-NC-iSD" id="s9v-Gz-3vO"/>
+                        <outlet property="transactionMemoTV" destination="7f3-5L-Gzz" id="1op-LZ-wSH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="et8-lx-wGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -445,7 +458,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="sZ7-3k-woM"/>
-        <segue reference="99h-u9-5p3"/>
         <segue reference="QcL-iv-ffD"/>
+        <segue reference="Nqf-LH-YLP"/>
     </inferredMetricsTieBreakers>
 </document>

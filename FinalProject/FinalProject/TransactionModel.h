@@ -18,6 +18,7 @@
 -(NSString *) getBuyerDateAndTime;
 -(NSString *) getAgreedUponDateAndTime;
 -(BOOL) isIsSeller;
+-(double) getTransactionAmount;
 
 //setters
 - (void) setTransactionMemo: (NSString *) newTransactionMemo;
@@ -25,6 +26,7 @@
 -(void) setBuyerDateAndTime:(NSString *)buyerDateAndTime;
 -(void) setAgreedUponDateAndTime:(NSString *)agreedUponDateAndTime;
 -(void) setIsSeller: (BOOL) seller;
+-(void) setTransactionAmount:(double)transactionAmount;
 
 
 @end

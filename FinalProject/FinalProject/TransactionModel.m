@@ -29,15 +29,19 @@
 //isSeller - BOOL
 
 
-@property (nonatomic) NSString* tranactionMemo;
+
 @property BOOL timeIsAgreedUpon;
 @property BOOL locationIsAgreedUpon;
 @property BOOL dollarAmountIsAgreedUpon;
+
 @property (nonatomic) BOOL isSeller; //TODO LONG generate login key so no need to ask
 
 @property (nonatomic) NSString* buyerDateAndTime;
 @property (nonatomic) NSString* sellerDateAndTime;
 @property (nonatomic) NSString* agreedUponDateAndTime;
+
+@property (nonatomic) NSString* tranactionMemo;
+@property (nonatomic) double transactionAmount;
 
 
 
@@ -58,9 +62,7 @@
 }
 
 //getters
-- (NSString *) tranactionMemo{
-    return _tranactionMemo;
-}
+
 -(NSString *) getSellerDateAndTime{
     return _sellerDateAndTime;
 }
@@ -70,15 +72,21 @@
 -(NSString *) getAgreedUponDateAndTime{
     return _agreedUponDateAndTime;
 }
+
 -(BOOL) isIsSeller{
     return _isSeller;
 }
 
+- (NSString *) tranactionMemo{
+    return _tranactionMemo;
+}
+-(double) getTransactionAmount{
+    return _transactionAmount;
+}
+
 
 //setters
-- (void) setTransactionMemo: (NSString *) newTransactionMemo{
-    _tranactionMemo = newTransactionMemo;
-}
+
 -(void) setSellerDateAndTime:(NSString *)sellerDateAndTime{
     _sellerDateAndTime = sellerDateAndTime;
 }
@@ -88,8 +96,16 @@
 -(void) setAgreedUponDateAndTime:(NSString *)agreedUponDateAndTime{
     _agreedUponDateAndTime = agreedUponDateAndTime;
 }
+
 -(void) setIsSeller: (BOOL) seller{
     _isSeller = seller;
+}
+
+- (void) setTransactionMemo: (NSString *) newTransactionMemo{
+    _tranactionMemo = newTransactionMemo;
+}
+-(void) setTransactionAmount:(double)transactionAmount{
+    self.transactionAmount = transactionAmount;
 }
 
 @end
