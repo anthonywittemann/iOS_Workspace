@@ -19,7 +19,7 @@
 
 //agreedUponDateAndTime - TODO - NSString
 //buyerDateAndTime - TODO - NSString
-//sellerDateAndTime - TODO - NSString
+//transactionMemo - TODO - NSString
 //timeIsAgreedUpon - BOOL
 
 //dollarAmountIsAgreedUpon - BOOL
@@ -51,8 +51,6 @@
 
 
 @property (nonatomic) Firebase *transactionElementsRef;
-
-
 
 
 @end
@@ -98,6 +96,15 @@
             @"gracehop": gracehop
          };
          [transactionElementsRef setValue: transactionElements];
+         
+         
+         //TODO modify these guys in the setters
+         Firebase *alanRef = [usersRef childByAppendingPath: @"alanisawesome"];
+         [alanRef setValue: alanisawesome];
+         
+         Firebase *hopperRef = [usersRef childByAppendingPath: @"gracehop"];
+         [hopperRef setValue: gracehop];
+         
          */
         
         //    // Write data to Firebase - TODO WHERE TO PUT THIS??
@@ -153,36 +160,87 @@
 
 -(void) setSellerDateAndTime:(NSString *)sellerDateAndTime{
     _sellerDateAndTime = sellerDateAndTime;
+    //Firebase *sellerDateAndTimeRef = [transactionElementsRef childByAppendingPath: @"sellerDateAndTime"];
+    //NSDictionary *sDAT = @{
+    //  @"sellerDateAndTime": sellerDateAndTime,
+    //};
+    //[sellerDateAndTimeRef updateChildValues: sellerDateAndTime];
 }
 -(void) setBuyerDateAndTime:(NSString *)buyerDateAndTime{
     _buyerDateAndTime = buyerDateAndTime;
+    //Firebase *buyerDateAndTimeRef = [transactionElementsRef childByAppendingPath: @"buyerDateAndTime"];
+    //NSDictionary *sDAT = @{
+    //  @"buyerDateAndTime": buyerDateAndTime,
+    //};
+    //[buyerDateAndTimeRef updateChildValues: buyerDateAndTime];
 }
 -(void) setAgreedUponDateAndTime:(NSString *)agreedUponDateAndTime{
     _agreedUponDateAndTime = agreedUponDateAndTime;
+    //Firebase *agreedUponDateAndTimeRef = [transactionElementsRef childByAppendingPath: @"agreedUponDateAndTime"];
+    //NSDictionary *sDAT = @{
+    //  @"agreedUponDateAndTime": agreedUponDateAndTime,
+    //};
+    //[agreedUponDateAndTimeRef updateChildValues: agreedUponDateAndTime];
 }
 
 -(void) setIsSeller: (BOOL) seller{
     _isSeller = seller;
+    //Firebase *isSellerRef = [transactionElementsRef childByAppendingPath: @"isSeller"];
+    //NSDictionary *sDAT = @{
+    //  @"isSeller": seller,
+    //};
+    //[isSellerRef updateChildValues: isSeller];
 }
 
 - (void) setTransactionMemo: (NSString *) newTransactionMemo{
     _transactionMemo = newTransactionMemo;
+    //Firebase *transactionMemoRef = [transactionElementsRef childByAppendingPath: @"transactionMemo"];
+    //NSDictionary *sDAT = @{
+    //  @"transactionMemo": newTransactionMemo,
+    //};
+    //[transactionMemoRef updateChildValues: transactionMemo];
+    
 }
 -(void) setTransactionAmount:(NSString *) transactionAmnt{
     self.transactionAmount = transactionAmnt;
+    //Firebase *transactionAmountRef = [transactionElementsRef childByAppendingPath: @"transactionAmount"];
+    //NSDictionary *sDAT = @{
+    //  @"transactionAmount": transactionAmnt,
+    //};
+    //[transactionAmountRef updateChildValues: transactionAmount];
 }
 
 -(void) setLocationName:(NSString *) newLocationName{
     _locationName = newLocationName;
+    //Firebase *locationNameRef = [transactionElementsRef childByAppendingPath: @"locationName"];
+    //NSDictionary *sDAT = @{
+    //  @"locationName": newLocationName,
+    //};
+    //[locationNameRef updateChildValues: locationName];
 }
 -(void) setLocationAddress:(NSString *) newLocationAddress{
     _locationAddress = newLocationAddress;
+    //Firebase *locationAddressRef = [transactionElementsRef childByAppendingPath: @"locationAddress"];
+    //NSDictionary *sDAT = @{
+    //  @"locationAddress": newLocationAddress,
+    //};
+    //[locationAddressRef updateChildValues: locationAddress];
 }
 -(void) setCurrentLocationName:(NSString *) newCurrentLocationName{
     _locationName = newCurrentLocationName;
+    //Firebase *currentLocationNameRef = [transactionElementsRef childByAppendingPath: @"currentLocationName"];
+    //NSDictionary *sDAT = @{
+    //  @"currentLocationName": newcurrentLocationName,
+    //};
+    //[currentLocationNameRef updateChildValues: currentLocationName];
 }
 -(void) setCurrentLocationAddress:(NSString *) newCurrentLocationAddress{
     _locationAddress = newCurrentLocationAddress;
+    //Firebase *currentLocationAddressRef = [transactionElementsRef childByAppendingPath: @"currentLocationAddress"];
+    //NSDictionary *sDAT = @{
+    //  @"currentLocationAddress": newcurrentLocationAddress,
+    //};
+    //[currentLocationAddressRef updateChildValues: currentLocationAddress];
 }
 
 @end

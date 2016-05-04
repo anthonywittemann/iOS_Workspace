@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Firebase/Firebase.h>
 
 @interface TransactionModel : NSObject
 
