@@ -7,29 +7,12 @@
 //
 
 #import "TransactionModel.h"
-#import <Firebase/Firebase.h>
+//#import <Firebase/Firebase.h>
+static NSString *const kTransactionElementsPList = @"TransactionElements.list";
 
 @interface TransactionModel ()
 
-//TODO - properties
-//agreedUponLocation TODO - location from coreLocation or GoogleMaps
-//buyerCurrentLocation - TODO - location from coreLocation or GoogleMaps
-//sellerCurrentLocation - TODO - location from coreLocation or GoogleMaps
-//locationIsAgreedUpon - BOOL
-
-//agreedUponDateAndTime - TODO - NSString
-//buyerDateAndTime - TODO - NSString
-//transactionMemo - TODO - NSString
-//timeIsAgreedUpon - BOOL
-
-//dollarAmountIsAgreedUpon - BOOL
-//agreedUponDollarAmount - TODO - figure out with Venmo API
-
-//transactionMemo - NSString
-
-//isSeller - BOOL
-
-
+//properties for model
 
 @property BOOL timeIsAgreedUpon;
 @property BOOL locationIsAgreedUpon;
@@ -37,20 +20,24 @@
 
 @property (nonatomic) BOOL isSeller; //TODO LONG generate login key so no need to ask
 
-@property (nonatomic) NSString* buyerDateAndTime;
-@property (nonatomic) NSString* sellerDateAndTime;
-@property (nonatomic) NSString* agreedUponDateAndTime;
+@property (strong, nonatomic) NSString* buyerDateAndTime;
+@property (strong, nonatomic) NSString* sellerDateAndTime;
+@property (strong, nonatomic) NSString* agreedUponDateAndTime;
 
-@property (nonatomic) NSString* transactionMemo; //TODO LONG handle cases where there is both a buyer and sell
-@property (nonatomic) NSString* transactionAmount;
+@property (strong, nonatomic) NSString* transactionMemo; //TODO LONG handle cases where there is both a buyer and sell
+@property (strong, nonatomic) NSString* transactionAmount;
 
-@property (nonatomic) NSString* locationName; //TODO LONG handle cases where there is both a buyer and sell
-@property (nonatomic) NSString* locationAddress;
-@property (nonatomic) NSString* currentLocationName; //TODO LONG handle cases where there is both a buyer and sell
-@property (nonatomic) NSString* currentLocationAddress;
+@property (strong, nonatomic) NSString* locationName; //TODO LONG handle cases where there is both a buyer and sell
+@property (strong, nonatomic) NSString* locationAddress;
+@property (strong, nonatomic) NSString* currentLocationName; //TODO LONG handle cases where there is both a buyer and sell
+@property (strong, nonatomic) NSString* currentLocationAddress;
 
 
-@property (nonatomic) Firebase *transactionElementsRef;
+//@property (nonatomic) Firebase *transactionElementsRef;
+
+//properties to store data locally
+@property (strong, nonatomic) NSMutableArray *transactionElements;
+@property (strong, nonatomic) NSString *filePath;
 
 
 @end
@@ -71,14 +58,49 @@
 - (instancetype) init{ //TODO!!!!!!!!
     self = [super init];
     if (self) {
-        // Create a reference to a Firebase database URL
-        Firebase* myRootRef = [[Firebase alloc] initWithUrl:@"https://radiant-torch-5845.firebaseIO.com"];
-        _transactionElementsRef = [myRootRef childByAppendingPath: @"transactionElements"];
         
-        // Read data and react to changes
-        [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-            NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
-        }];
+        NSArray * paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        
+        _filePath = [documentsDirectory stringByAppendingPathComponent:kTransactionElementsPList];
+        
+        _transactionElements = [NSMutableArray arrayWithContentsOfFile:_filePath];
+        
+        if(!self.transactionElements){
+            
+            //initialize properties
+            _timeIsAgreedUpon = FALSE;
+            _locationIsAgreedUpon = FALSE;
+            _dollarAmountIsAgreedUpon = FALSE;
+            
+            _isSeller = TRUE;
+            
+            _buyerDateAndTime = @"No time selected";
+            _sellerDateAndTime = @"No time selected";
+            _agreedUponDateAndTime = @"No time agreed upon";
+            
+            _transactionMemo = @"No Memo";
+            _transactionAmount = @"No Amount Yet";
+            
+            _locationName = @"No Location Selected";
+            _locationAddress = @"No Location Selected";
+            _currentLocationName = @"IDK where you are";
+            _currentLocationAddress = @"IDK where you are";
+            
+            
+            //bools stored as NSNumber because local storage only stores objects, not primatives
+            _transactionElements = [[NSMutableArray alloc] initWithObjects: [NSNumber numberWithBool:_timeIsAgreedUpon], [NSNumber numberWithBool:_locationIsAgreedUpon], [NSNumber numberWithBool:_dollarAmountIsAgreedUpon], [NSNumber numberWithBool:_isSeller], _buyerDateAndTime, _sellerDateAndTime, _agreedUponDateAndTime, _transactionMemo, _transactionAmount, _locationName, _locationAddress, _currentLocationName, _currentLocationAddress, nil];
+        
+        //------------------------FIREBASE-----------------------------------
+//        // Create a reference to a Firebase database URL
+//        Firebase* myRootRef = [[Firebase alloc] initWithUrl:@"https://radiant-torch-5845.firebaseIO.com"];
+//        _transactionElementsRef = [myRootRef childByAppendingPath: @"transactionElements"];
+//        
+//        // Read data and react to changes
+//        [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+//            NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
+//        }];
         
         //TODO - if database is empty, write default data to it - replace with my NSDictionaries with transaction data
         /*
@@ -109,16 +131,16 @@
         
         //    // Write data to Firebase - TODO WHERE TO PUT THIS??
         //    [myRootRef setValue:@"Do you have data? You'll love Firebase."];
-        
+        }
         
     }
     return self;
 }
 
 //getters
--(Firebase *) getFirebaseRef{
-    return _transactionElementsRef;
-}
+//-(Firebase *) getFirebaseRef{
+//    return _transactionElementsRef;
+//}
 
 -(NSString *) getSellerDateAndTime{
     return _sellerDateAndTime;
@@ -165,6 +187,7 @@
     //  @"sellerDateAndTime": sellerDateAndTime,
     //};
     //[sellerDateAndTimeRef updateChildValues: sellerDateAndTime];
+    [self save];
 }
 -(void) setBuyerDateAndTime:(NSString *)buyerDateAndTime{
     _buyerDateAndTime = buyerDateAndTime;
@@ -173,6 +196,7 @@
     //  @"buyerDateAndTime": buyerDateAndTime,
     //};
     //[buyerDateAndTimeRef updateChildValues: buyerDateAndTime];
+    [self save];
 }
 -(void) setAgreedUponDateAndTime:(NSString *)agreedUponDateAndTime{
     _agreedUponDateAndTime = agreedUponDateAndTime;
@@ -181,6 +205,7 @@
     //  @"agreedUponDateAndTime": agreedUponDateAndTime,
     //};
     //[agreedUponDateAndTimeRef updateChildValues: agreedUponDateAndTime];
+    [self save];
 }
 
 -(void) setIsSeller: (BOOL) seller{
@@ -190,6 +215,7 @@
     //  @"isSeller": seller,
     //};
     //[isSellerRef updateChildValues: isSeller];
+    [self save];
 }
 
 - (void) setTransactionMemo: (NSString *) newTransactionMemo{
@@ -199,6 +225,7 @@
     //  @"transactionMemo": newTransactionMemo,
     //};
     //[transactionMemoRef updateChildValues: transactionMemo];
+    [self save];
     
 }
 -(void) setTransactionAmount:(NSString *) transactionAmnt{
@@ -208,6 +235,7 @@
     //  @"transactionAmount": transactionAmnt,
     //};
     //[transactionAmountRef updateChildValues: transactionAmount];
+    [self save];
 }
 
 -(void) setLocationName:(NSString *) newLocationName{
@@ -217,6 +245,7 @@
     //  @"locationName": newLocationName,
     //};
     //[locationNameRef updateChildValues: locationName];
+    [self save];
 }
 -(void) setLocationAddress:(NSString *) newLocationAddress{
     _locationAddress = newLocationAddress;
@@ -225,6 +254,7 @@
     //  @"locationAddress": newLocationAddress,
     //};
     //[locationAddressRef updateChildValues: locationAddress];
+    [self save];
 }
 -(void) setCurrentLocationName:(NSString *) newCurrentLocationName{
     _locationName = newCurrentLocationName;
@@ -233,6 +263,7 @@
     //  @"currentLocationName": newcurrentLocationName,
     //};
     //[currentLocationNameRef updateChildValues: currentLocationName];
+    [self save];
 }
 -(void) setCurrentLocationAddress:(NSString *) newCurrentLocationAddress{
     _locationAddress = newCurrentLocationAddress;
@@ -241,6 +272,11 @@
     //  @"currentLocationAddress": newcurrentLocationAddress,
     //};
     //[currentLocationAddressRef updateChildValues: currentLocationAddress];
+    [self save];
+}
+    
+- (void) save {
+    [self.transactionElements writeToFile:self.filePath atomically:YES];
 }
 
 @end

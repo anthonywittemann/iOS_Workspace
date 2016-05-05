@@ -38,33 +38,37 @@
 //TODO LONG - this is a fucking mess
 
 - (IBAction)moneyAmountTFEditingDidEnd:(id)sender {
-    [self updateAmount:self.moneyAmountTF.text.doubleValue];
+    [self updateAmount:self.moneyAmountTF.text.floatValue];
 }
 
 - (IBAction) backgroundTouched:(id)sender {
     [self.moneyAmountTF resignFirstResponder];
-    [self updateAmount:self.moneyAmountTF.text.doubleValue];
+    [self updateAmount:self.moneyAmountTF.text.floatValue];
 }
 
 -(IBAction)dismissKeyboard:(id)sender{
     [sender resignFirstResponder];
-    [self updateAmount:self.moneyAmountTF.text.doubleValue];
+    [self updateAmount:self.moneyAmountTF.text.floatValue];
 }
 
 //TODO - HAVING PROBLEMS DISMISSING KEYBOARD AND UPDATING VALUE
--(void) updateAmount:(double) rawAmount{
-    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-    [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [numberFormatter setUsesGroupingSeparator:NO];
-    [numberFormatter setMaximumFractionDigits:2];
-    [numberFormatter setMinimumFractionDigits:0];
-    [numberFormatter setRoundingMode: NSNumberFormatterRoundUp];
+-(void) updateAmount:(float) rawAmount{
+    //TODO LONG - sanitize input
     
-    //update model
-    [self.model setTransactionAmount:[numberFormatter stringFromNumber:[NSNumber numberWithFloat:rawAmount]]];
+//    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+//    NSString *numberAsString = [numberFormatter stringFromNumber:[NSNumber numberWithDouble:rawAmount]];
+//    
+//    [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+//    [numberFormatter setUsesGroupingSeparator:NO];
+//    [numberFormatter setMaximumFractionDigits:2];
+//    [numberFormatter setMinimumFractionDigits:0];
+//    [numberFormatter setRoundingMode: NSNumberFormatterRoundUp];
     
     //update label
-    self.moneyAmountLabel.text = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:rawAmount]];
+    self.moneyAmountLabel.text = [NSString stringWithFormat:@"$%.2f", rawAmount];
+    
+    //update model
+    //[self.model setTransactionAmount:rawAmount];
 }
 
 

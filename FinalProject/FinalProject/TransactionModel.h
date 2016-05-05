@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Firebase/Firebase.h>
+//#import <Firebase/Firebase.h>
 
 @interface TransactionModel : NSObject
 
 +(instancetype) sharedModel;
 
 //getters
--(Firebase *) getFirebaseRef;
+//-(Firebase *) getFirebaseRef;
 - (NSString *) getTransactionMemo;
 -(NSString *) getSellerDateAndTime;
 -(NSString *) getBuyerDateAndTime;

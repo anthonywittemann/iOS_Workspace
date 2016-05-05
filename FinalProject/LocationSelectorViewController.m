@@ -9,15 +9,21 @@
 #import "LocationSelectorViewController.h"
 #import "TransactionModel.h"
 #import <Firebase/Firebase.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 @import GoogleMaps;
 
 @interface LocationSelectorViewController ()
 // Instantiate a pair of UILabels in Interface Builder
 //needed for google maps API
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
-@property (weak, nonatomic) IBOutlet UILabel *currentNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *currentAddressLabel;
+<CLLocationManagerDelegate>
+//@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *currentNameLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *currentAddressLabel;
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 //for UI not on google maps
 @property (weak, nonatomic) IBOutlet UILabel *locationNameLabel;
@@ -41,6 +47,21 @@ GMSPlacePicker *_placePicker;
     
     self.model = [TransactionModel sharedModel];
     
+    [[self mapView] setShowsUserLocation:YES];
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    
+    [[self locationManager] setDelegate:self];
+    
+    // we have to setup the location manager with permission in later iOS versions
+    if ([[self locationManager] respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [[self locationManager] requestWhenInUseAuthorization];
+    }
+    
+    [[self locationManager] setDesiredAccuracy:kCLLocationAccuracyBest];
+    [[self locationManager] startUpdatingLocation];
+    
+    
     _placesClient = [[GMSPlacesClient alloc] init];
     self.locationNameLabel.text = self.model.getLocationName;
     self.locationAddressLabel.text = self.model.getLocationAddress;
@@ -49,6 +70,20 @@ GMSPlacePicker *_placePicker;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    CLLocation *location = locations.lastObject;
+    _currentLocNameLabel.text = [NSString stringWithFormat:@"%.6f",
+                              location.coordinate.latitude];
+    _currentLocAddressLabel.text = [NSString stringWithFormat:@"%.6f",
+                                 location.coordinate.longitude];
+    
+//    NSLog([NSString stringWithFormat:@"%.6f",
+//          location.coordinate.latitude]);
+//    NSLog([NSString stringWithFormat:@"%.6f",
+//           location.coordinate.longitude]);
+
 }
 
 // to get current location - TODO NOT WORKING
@@ -60,20 +95,22 @@ GMSPlacePicker *_placePicker;
             return;
         }
         
-        self.currentNameLabel.text = @"No current place";
-        self.currentAddressLabel.text = @"";
+        self.currentLocNameLabel.text = @"No current place";
+        self.currentLocAddressLabel.text = @"";
         
         if (placeLikelihoodList != nil) {
             GMSPlace *place = [[[placeLikelihoodList likelihoods] firstObject] place];
             if (place != nil) {
-                self.currentNameLabel.text = place.name;
-                self.currentAddressLabel.text = [[place.formattedAddress componentsSeparatedByString:@", "]
+                self.currentLocNameLabel.text = place.name;
+                self.currentLocAddressLabel.text = [[place.formattedAddress componentsSeparatedByString:@", "]
                                           componentsJoinedByString:@"\n"];
             }
         }
-        [self.model setCurrentLocationName:self.currentNameLabel.text];
-        [self.model setCurrentLocationAddress:self.currentAddressLabel.text];
-        NSLog(@"^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v^v");
+        [self.model setCurrentLocationName:self.currentLocNameLabel.text];
+        [self.model setCurrentLocationAddress:self.currentLocAddressLabel.text];
+        NSLog(@"Name: %@", self.currentLocNameLabel.text);
+        NSLog(@"Address: %@", self.currentLocAddressLabel.text);
+        NSLog(@"^v^v^v^v^v^v^v^v^v^ -- GOT CURRENT LOCATION FROM GOOGLE MAPS -- v^v^v^v^v^v^v^v^v^v^v");
     }];
 }
 
@@ -98,19 +135,20 @@ GMSPlacePicker *_placePicker;
         }
         
         if (place != nil) {
-            self.nameLabel.text = place.name;
-            self.addressLabel.text = [[place.formattedAddress
+            self.locationNameLabel.text = place.name;
+            self.locationAddressLabel.text = [[place.formattedAddress
                                        componentsSeparatedByString:@", "] componentsJoinedByString:@"\n"];
         } else {
-            self.nameLabel.text = @"No place selected";
-            self.addressLabel.text = @"";
+            self.locationNameLabel.text = @"No place selected";
+            self.locationAddressLabel.text = @"";
         }
         
-        [self.model setLocationName:self.nameLabel.text];
-        [self.model setLocationAddress:self.addressLabel.text];
-        self.locationNameLabel.text = self.nameLabel.text;
-        self.locationAddressLabel.text = self.addressLabel.text;
-        NSLog(@"GOOOOOT HEREEEEE!!!"); // TODO - data not being returned or displayed
+        [self.model setLocationName:self.locationNameLabel.text];
+        [self.model setLocationAddress:self.locationAddressLabel.text];
+
+        NSLog(@"Name: %@", self.locationNameLabel.text);
+        NSLog(@"Address: %@", self.locationAddressLabel.text);
+        NSLog(@"------------------ PLACE PICKED -----------------------"); // TODO - data not being returned or displayed
     }];
 }
 

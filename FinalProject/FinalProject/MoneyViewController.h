@@ -10,6 +10,6 @@
 
 @interface MoneyViewController : UIViewController
 
--(void) updateAmount:(double) rawAmount;
+-(void) updateAmount:(float) rawAmount;
 
 @end
