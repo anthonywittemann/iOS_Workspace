@@ -11,8 +11,7 @@
 		ED15DF741CD8A9760034BC32 /* DateSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED15DF731CD8A9760034BC32 /* DateSelectorViewController.m */; };
 		ED15DF771CD929F70034BC32 /* MoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED15DF761CD929F70034BC32 /* MoneyViewController.m */; };
 		ED15DF7A1CD93B650034BC32 /* ReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED15DF791CD93B650034BC32 /* ReviewViewController.m */; };
-		ED15DF7D1CDAB94C0034BC32 /* Icon-App@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED15DF7B1CDAB94C0034BC32 /* Icon-App@2x.png */; };
-		ED15DF7E1CDAB94C0034BC32 /* Icon-App@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED15DF7C1CDAB94C0034BC32 /* Icon-App@3x.png */; };
+		ED15DF801CDADF5F0034BC32 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED15DF7F1CDADF5F0034BC32 /* CoreLocation.framework */; };
 		ED4B7B761CD7E9DB00D859F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4B7B751CD7E9DB00D859F0 /* main.m */; };
 		ED4B7B791CD7E9DB00D859F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4B7B781CD7E9DB00D859F0 /* AppDelegate.m */; };
 		ED4B7B7F1CD7E9DB00D859F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4B7B7D1CD7E9DB00D859F0 /* Main.storyboard */; };
@@ -50,8 +49,7 @@
 		ED15DF761CD929F70034BC32 /* MoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyViewController.m; sourceTree = "<group>"; };
 		ED15DF781CD93B650034BC32 /* ReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewViewController.h; sourceTree = "<group>"; };
 		ED15DF791CD93B650034BC32 /* ReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewViewController.m; sourceTree = "<group>"; };
-		ED15DF7B1CDAB94C0034BC32 /* Icon-App@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-App@2x.png"; path = "../Icon-App@2x.png"; sourceTree = "<group>"; };
-		ED15DF7C1CDAB94C0034BC32 /* Icon-App@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-App@3x.png"; path = "../Icon-App@3x.png"; sourceTree = "<group>"; };
+		ED15DF7F1CDADF5F0034BC32 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		ED4B7B711CD7E9DB00D859F0 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4B7B751CD7E9DB00D859F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ED4B7B771CD7E9DB00D859F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED15DF801CDADF5F0034BC32 /* CoreLocation.framework in Frameworks */,
 				5FE6E5709613E52DC1B75F7C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +101,7 @@
 		2952004C91BF9852A2215A3D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED15DF7F1CDADF5F0034BC32 /* CoreLocation.framework */,
 				88441C959AE97EA16F715528 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -152,8 +152,6 @@
 		ED4B7B741CD7E9DB00D859F0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				ED15DF7B1CDAB94C0034BC32 /* Icon-App@2x.png */,
-				ED15DF7C1CDAB94C0034BC32 /* Icon-App@3x.png */,
 				ED4B7B771CD7E9DB00D859F0 /* AppDelegate.h */,
 				ED4B7B781CD7E9DB00D859F0 /* AppDelegate.m */,
 				ED4B7B851CD7E9DB00D859F0 /* Info.plist */,
@@ -324,8 +322,6 @@
 				ED4B7B841CD7E9DB00D859F0 /* LaunchScreen.storyboard in Resources */,
 				ED4B7B811CD7E9DB00D859F0 /* Assets.xcassets in Resources */,
 				ED4B7B7F1CD7E9DB00D859F0 /* Main.storyboard in Resources */,
-				ED15DF7E1CDAB94C0034BC32 /* Icon-App@3x.png in Resources */,
-				ED15DF7D1CDAB94C0034BC32 /* Icon-App@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

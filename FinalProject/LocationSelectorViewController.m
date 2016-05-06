@@ -17,19 +17,16 @@
 // Instantiate a pair of UILabels in Interface Builder
 //needed for google maps API
 <CLLocationManagerDelegate>
-//@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *currentNameLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *currentAddressLabel;
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic) CLLocationCoordinate2D location;
+@property (nonatomic) double cLatitude;
+@property (nonatomic) double cLongitude;
 
 //for UI not on google maps
 @property (weak, nonatomic) IBOutlet UILabel *locationNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationAddressLabel;
-@property (weak, nonatomic) IBOutlet UILabel *currentLocNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *currentLocAddressLabel;
 
 
 @property (strong,nonatomic) TransactionModel *model;
@@ -40,7 +37,7 @@
 GMSPlacesClient *_placesClient;
 GMSPlacePicker *_placePicker;
 
-//GMSMapView *mapView_;
+//GMSMapView *gmsMapView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -63,8 +60,31 @@ GMSPlacePicker *_placePicker;
     
     
     _placesClient = [[GMSPlacesClient alloc] init];
-    self.locationNameLabel.text = self.model.getLocationName;
-    self.locationAddressLabel.text = self.model.getLocationAddress;
+    
+    _mapView=[[MKMapView alloc] initWithFrame:self.view.frame];
+    _mapView.showsUserLocation=TRUE;
+    _mapView.delegate=self;
+    
+//    //------------------- LOAD MAP VIEW OF CURRENT LOCATION --------------------
+//    
+//    // Create a GMSCameraPosition that tells the map to display the
+//    // current location from core location at zoom level 13.
+//    
+////    while(_cLongitude == 0 && _cLatitude == 0); //wait until we get a location to display map
+//    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:_cLatitude
+//                                                            longitude:_cLongitude
+//                                                                 zoom:14];
+//    gmsMapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+//    gmsMapView.myLocationEnabled = YES;
+//    //self.view = gmsMapView;
+//    
+//    // Creates a marker in the center of the map.
+//    GMSMarker *marker = [[GMSMarker alloc] init];
+//    marker.position = CLLocationCoordinate2DMake(_cLatitude, _cLongitude);
+//    marker.title = @"You are here";
+////    marker.snippet = @"Australia";
+//    marker.map = gmsMapView;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,44 +94,27 @@ GMSPlacePicker *_placePicker;
 
 -(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     CLLocation *location = locations.lastObject;
-    _currentLocNameLabel.text = [NSString stringWithFormat:@"%.6f",
-                              location.coordinate.latitude];
-    _currentLocAddressLabel.text = [NSString stringWithFormat:@"%.6f",
-                                 location.coordinate.longitude];
+    _cLatitude = location.coordinate.latitude;
+    _cLongitude = location.coordinate.longitude;
+    //[gmsMapView animateToLocation:location.coordinate];
     
-//    NSLog([NSString stringWithFormat:@"%.6f",
-//          location.coordinate.latitude]);
-//    NSLog([NSString stringWithFormat:@"%.6f",
-//           location.coordinate.longitude]);
-
+    
+    
 }
 
-// to get current location - TODO NOT WORKING
-// Add a UIButton in Interface Builder to call this function
-- (IBAction)getCurrentPlace:(UIButton *)sender {
-    [_placesClient currentPlaceWithCallback:^(GMSPlaceLikelihoodList *placeLikelihoodList, NSError *error){
-        if (error != nil) {
-            NSLog(@"Pick Place error %@", [error localizedDescription]);
-            return;
-        }
-        
-        self.currentLocNameLabel.text = @"No current place";
-        self.currentLocAddressLabel.text = @"";
-        
-        if (placeLikelihoodList != nil) {
-            GMSPlace *place = [[[placeLikelihoodList likelihoods] firstObject] place];
-            if (place != nil) {
-                self.currentLocNameLabel.text = place.name;
-                self.currentLocAddressLabel.text = [[place.formattedAddress componentsSeparatedByString:@", "]
-                                          componentsJoinedByString:@"\n"];
-            }
-        }
-        [self.model setCurrentLocationName:self.currentLocNameLabel.text];
-        [self.model setCurrentLocationAddress:self.currentLocAddressLabel.text];
-        NSLog(@"Name: %@", self.currentLocNameLabel.text);
-        NSLog(@"Address: %@", self.currentLocAddressLabel.text);
-        NSLog(@"^v^v^v^v^v^v^v^v^v^ -- GOT CURRENT LOCATION FROM GOOGLE MAPS -- v^v^v^v^v^v^v^v^v^v^v");
-    }];
+-(void)mapView:(MKMapView *)mapV didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    NSLog(@"map new location: %f %f", userLocation.coordinate.latitude, userLocation.coordinate.longitude);
+    _location=userLocation.coordinate;
+    
+    MKCoordinateRegion region;
+    region.center=_location;
+    MKCoordinateSpan span;
+    span.latitudeDelta=0.05;
+    span.longitudeDelta=0.05;
+    region.span=span;
+    
+    [mapV setRegion:region animated:TRUE];
 }
 
 
@@ -152,6 +155,41 @@ GMSPlacePicker *_placePicker;
     }];
 }
 
+
+
+
+
+
+
+
+
+// to get current location - TODO NOT WORKING
+//// Add a UIButton in Interface Builder to call this function
+//- (IBAction)getCurrentPlace:(UIButton *)sender {
+//    [_placesClient currentPlaceWithCallback:^(GMSPlaceLikelihoodList *placeLikelihoodList, NSError *error){
+//        if (error != nil) {
+//            NSLog(@"Pick Place error %@", [error localizedDescription]);
+//            return;
+//        }
+//
+//        self.currentLocNameLabel.text = @"No current place";
+//        self.currentLocAddressLabel.text = @"";
+//
+//        if (placeLikelihoodList != nil) {
+//            GMSPlace *place = [[[placeLikelihoodList likelihoods] firstObject] place];
+//            if (place != nil) {
+//                self.currentLocNameLabel.text = place.name;
+//                self.currentLocAddressLabel.text = [[place.formattedAddress componentsSeparatedByString:@", "]
+//                                          componentsJoinedByString:@"\n"];
+//            }
+//        }
+//        [self.model setCurrentLocationName:self.currentLocNameLabel.text];
+//        [self.model setCurrentLocationAddress:self.currentLocAddressLabel.text];
+//        NSLog(@"Name: %@", self.currentLocNameLabel.text);
+//        NSLog(@"Address: %@", self.currentLocAddressLabel.text);
+//        NSLog(@"^v^v^v^v^v^v^v^v^v^ -- GOT CURRENT LOCATION FROM GOOGLE MAPS -- v^v^v^v^v^v^v^v^v^v^v");
+//    }];
+//}
 /*
 #pragma mark - Navigation
 

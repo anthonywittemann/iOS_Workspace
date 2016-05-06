@@ -24,6 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.model = [TransactionModel sharedModel];
+    _transactionMemoTV.delegate=self; //YES, I'm getting a warning, but it to get rid of the keyboard for the TextView when enter is pressed
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,19 +38,33 @@
 
 //TODO LONG - this is a fucking mess
 
+//--------------------------- METHODS TO GET RID OF THE GOD DAMN KEYBOARD ---------------------
 - (IBAction)moneyAmountTFEditingDidEnd:(id)sender {
     [self updateAmount:self.moneyAmountTF.text.floatValue];
 }
 
 - (IBAction) backgroundTouched:(id)sender {
     [self.moneyAmountTF resignFirstResponder];
+    [self.view endEditing:YES];
     [self updateAmount:self.moneyAmountTF.text.floatValue];
 }
 
 -(IBAction)dismissKeyboard:(id)sender{
     [sender resignFirstResponder];
+    [self.view endEditing:YES];
     [self updateAmount:self.moneyAmountTF.text.floatValue];
 }
+
+- (BOOL)textView:(UITextView *)txtView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if( [text rangeOfCharacterFromSet:[NSCharacterSet newlineCharacterSet]].location == NSNotFound ) {
+        return YES;
+    }
+    
+    [txtView resignFirstResponder];
+    return NO;
+}
+
+
 
 //TODO - HAVING PROBLEMS DISMISSING KEYBOARD AND UPDATING VALUE
 -(void) updateAmount:(float) rawAmount{
@@ -67,8 +82,8 @@
     //update label
     self.moneyAmountLabel.text = [NSString stringWithFormat:@"$%.2f", rawAmount];
     
-    //update model
-    //[self.model setTransactionAmount:rawAmount];
+    //update model -- TODO some sort of dangling pointer error
+    //[self.model setTransactionAmount:[NSString stringWithFormat:@"$%.2f", rawAmount]];
 }
 
 
