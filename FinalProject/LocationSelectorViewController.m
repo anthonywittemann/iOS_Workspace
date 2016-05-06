@@ -65,7 +65,12 @@ GMSPlacePicker *_placePicker;
     _mapView.showsUserLocation=TRUE;
     _mapView.delegate=self;
     
-//    //------------------- LOAD MAP VIEW OF CURRENT LOCATION --------------------
+    
+    //Load data from model into UI Elements
+    _locationNameLabel.text = [self.model getLocationName];
+    _locationAddressLabel.text = [self.model getLocationAddress];
+    
+//    //------------------- LOAD GOOGLE MAP VIEW OF CURRENT LOCATION --------------------
 //    
 //    // Create a GMSCameraPosition that tells the map to display the
 //    // current location from core location at zoom level 13.
@@ -149,55 +154,24 @@ GMSPlacePicker *_placePicker;
         [self.model setLocationName:self.locationNameLabel.text];
         [self.model setLocationAddress:self.locationAddressLabel.text];
 
-        NSLog(@"Name: %@", self.locationNameLabel.text);
-        NSLog(@"Address: %@", self.locationAddressLabel.text);
-        NSLog(@"------------------ PLACE PICKED -----------------------"); // TODO - data not being returned or displayed
+//        NSLog(@"Name: %@", self.locationNameLabel.text);
+//        NSLog(@"Address: %@", self.locationAddressLabel.text);
+//        NSLog(@"------------------ PLACE PICKED -----------------------");
     }];
 }
 
-
-
-
-
-
-
-
-
-// to get current location - TODO NOT WORKING
-//// Add a UIButton in Interface Builder to call this function
-//- (IBAction)getCurrentPlace:(UIButton *)sender {
-//    [_placesClient currentPlaceWithCallback:^(GMSPlaceLikelihoodList *placeLikelihoodList, NSError *error){
-//        if (error != nil) {
-//            NSLog(@"Pick Place error %@", [error localizedDescription]);
-//            return;
-//        }
-//
-//        self.currentLocNameLabel.text = @"No current place";
-//        self.currentLocAddressLabel.text = @"";
-//
-//        if (placeLikelihoodList != nil) {
-//            GMSPlace *place = [[[placeLikelihoodList likelihoods] firstObject] place];
-//            if (place != nil) {
-//                self.currentLocNameLabel.text = place.name;
-//                self.currentLocAddressLabel.text = [[place.formattedAddress componentsSeparatedByString:@", "]
-//                                          componentsJoinedByString:@"\n"];
-//            }
-//        }
-//        [self.model setCurrentLocationName:self.currentLocNameLabel.text];
-//        [self.model setCurrentLocationAddress:self.currentLocAddressLabel.text];
-//        NSLog(@"Name: %@", self.currentLocNameLabel.text);
-//        NSLog(@"Address: %@", self.currentLocAddressLabel.text);
-//        NSLog(@"^v^v^v^v^v^v^v^v^v^ -- GOT CURRENT LOCATION FROM GOOGLE MAPS -- v^v^v^v^v^v^v^v^v^v^v");
-//    }];
-//}
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    
+    //update model
+    [self.model setLocationName:self.locationNameLabel.text];
+    [self.model setLocationAddress:self.locationAddressLabel.text];
 }
-*/
+
 
 @end

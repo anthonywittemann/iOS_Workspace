@@ -71,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="151" y="315"/>
+            <point key="canvasLocation" x="327" y="-1"/>
         </scene>
         <!--Location Selector View Controller-->
         <scene sceneID="0fz-4i-O1W">
@@ -183,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NUi-8V-99m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="885" y="315"/>
+            <point key="canvasLocation" x="1345" y="19"/>
         </scene>
         <!--Date Selector View Controller-->
         <scene sceneID="mVy-Wt-aeS">
@@ -274,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Pg-Nc-IEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1621" y="320"/>
+            <point key="canvasLocation" x="2557" y="-36"/>
         </scene>
         <!--Money View Controller-->
         <scene sceneID="eLy-qU-v5N">
@@ -334,9 +334,6 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                <connections>
-                                    <action selector="moneyAmountTFEditingDidEnd:" destination="eAP-ev-kkC" eventType="editingDidEnd" id="QlC-rO-pvU"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7z-CX-ura">
                                 <rect key="frame" x="265" y="401" width="70" height="39"/>
@@ -376,14 +373,14 @@
                     </view>
                     <connections>
                         <outlet property="moneyAmountLabel" destination="EIQ-J2-qeq" id="crR-D4-Qw0"/>
-                        <outlet property="moneyAmountTF" destination="y47-eV-fZH" id="Gov-bN-NlR"/>
+                        <outlet property="moneyAmountTF" destination="y47-eV-fZH" id="m6V-gL-O4D"/>
                         <outlet property="reviewButton" destination="o7z-CX-ura" id="YKa-N2-Z3T"/>
                         <outlet property="transactionMemoTV" destination="7f3-5L-Gzz" id="nPg-7F-ijb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="et8-lx-wGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2441" y="320"/>
+            <point key="canvasLocation" x="1801" y="993"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="vb8-bL-g1d">
@@ -566,12 +563,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pP5-7C-yP4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3118" y="321"/>
+            <point key="canvasLocation" x="514" y="1037"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oii-ey-FMh"/>
-        <segue reference="Z8D-40-Ml0"/>
+        <segue reference="sZ7-3k-woM"/>
         <segue reference="99h-u9-5p3"/>
+        <segue reference="4Sv-rP-ylz"/>
     </inferredMetricsTieBreakers>
 </document>

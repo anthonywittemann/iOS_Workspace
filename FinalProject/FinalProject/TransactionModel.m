@@ -14,9 +14,10 @@ static NSString *const kTransactionElementsPList = @"TransactionElements.list";
 
 //properties for model
 
-@property BOOL timeIsAgreedUpon;
-@property BOOL locationIsAgreedUpon;
-@property BOOL dollarAmountIsAgreedUpon;
+//TODO LONG
+//@property BOOL timeIsAgreedUpon;
+//@property BOOL locationIsAgreedUpon;
+//@property BOOL dollarAmountIsAgreedUpon;
 
 @property (nonatomic) BOOL isSeller; //TODO LONG generate login key so no need to ask
 
@@ -67,12 +68,13 @@ static NSString *const kTransactionElementsPList = @"TransactionElements.list";
         
         _transactionElements = [NSMutableArray arrayWithContentsOfFile:_filePath];
         
-        if(!self.transactionElements){
+        if(self.transactionElements == nil){
             
             //initialize properties
-            _timeIsAgreedUpon = FALSE;
-            _locationIsAgreedUpon = FALSE;
-            _dollarAmountIsAgreedUpon = FALSE;
+            //TODO - long
+//            _timeIsAgreedUpon = FALSE;
+//            _locationIsAgreedUpon = FALSE;
+//            _dollarAmountIsAgreedUpon = FALSE;
             
             _isSeller = TRUE;
             
@@ -90,7 +92,9 @@ static NSString *const kTransactionElementsPList = @"TransactionElements.list";
             
             
             //bools stored as NSNumber because local storage only stores objects, not primatives
-            _transactionElements = [[NSMutableArray alloc] initWithObjects: [NSNumber numberWithBool:_timeIsAgreedUpon], [NSNumber numberWithBool:_locationIsAgreedUpon], [NSNumber numberWithBool:_dollarAmountIsAgreedUpon], [NSNumber numberWithBool:_isSeller], _buyerDateAndTime, _sellerDateAndTime, _agreedUponDateAndTime, _transactionMemo, _transactionAmount, _locationName, _locationAddress, _currentLocationName, _currentLocationAddress, nil];
+            _transactionElements = [[NSMutableArray alloc] initWithObjects: [NSNumber numberWithBool:_isSeller], _buyerDateAndTime, _sellerDateAndTime, _agreedUponDateAndTime, _transactionMemo, _transactionAmount, _locationName, _locationAddress, _currentLocationName, _currentLocationAddress, nil];
+            
+            NSLog(@"````````````````````no data found`````````````````````````");
         
         //------------------------FIREBASE-----------------------------------
 //        // Create a reference to a Firebase database URL
@@ -131,6 +135,22 @@ static NSString *const kTransactionElementsPList = @"TransactionElements.list";
         
         //    // Write data to Firebase - TODO WHERE TO PUT THIS??
         //    [myRootRef setValue:@"Do you have data? You'll love Firebase."];
+        } else{
+            NSLog(@"````````````````````initializing transaction elements from file`````````````````````````");
+            //TODO - load the saved properties into the UIElements
+            _isSeller = TRUE;
+            
+            _buyerDateAndTime = @"No time selected";
+            _sellerDateAndTime = @"No time selected";
+            _agreedUponDateAndTime = @"No time agreed upon";
+            
+            _transactionMemo = @"No Memo";
+            _transactionAmount = @"No Amount Yet";
+            
+            _locationName = @"No Location Selected";
+            _locationAddress = @"No Location Selected";
+            _currentLocationName = @"IDK where you are";
+            _currentLocationAddress = @"IDK where you are";
         }
         
     }
@@ -228,7 +248,9 @@ static NSString *const kTransactionElementsPList = @"TransactionElements.list";
     [self save];
     
 }
--(void) setTransactionAmount:(NSString *) transactionAmnt{
+- (void) setTheTransactionAmount:(NSString *) transactionAmnt{
+    
+    NSLog(@"Entered setTransactionAmt");
     self.transactionAmount = transactionAmnt;
     //Firebase *transactionAmountRef = [transactionElementsRef childByAppendingPath: @"transactionAmount"];
     //NSDictionary *sDAT = @{

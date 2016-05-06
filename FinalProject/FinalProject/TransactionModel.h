@@ -32,7 +32,7 @@
 -(void) setBuyerDateAndTime:(NSString *)buyerDateAndTime;
 -(void) setAgreedUponDateAndTime:(NSString *)agreedUponDateAndTime;
 -(void) setIsSeller: (BOOL) seller;
--(void) setTransactionAmount:(NSString *)transactionAmount;
+-(void) setTheTransactionAmount:(NSString *)transactionAmount;
 -(void) setLocationName:(NSString *) newLocationName;
 -(void) setLocationAddress:(NSString *) newLocationAddress;
 -(void) setCurrentLocationName:(NSString *) newCurrentLocationName;
